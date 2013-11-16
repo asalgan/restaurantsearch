@@ -1,0 +1,26 @@
+<h1>New Restaurant</h1>
+
+
+<%= form_tag(restaurants_url, method: 'post') do %>
+
+
+  <div>
+    <%= label_tag :name %><br />
+    <%= text_field_tag :name %>
+  </div>
+
+  <div>
+    <%= label_tag :location %><br />
+    <%= text_field_tag :location %>
+  </div>
+
+  <div>
+    <%= label_tag :cuisine %><br />
+    <%= text_field_tag :cuisine %>
+  </div>
+
+
+  <div>
+    <%= submit_tag "Create Restaurant" %>
+  </div>
+<% end %>

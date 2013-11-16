@@ -1,0 +1,36 @@
+<h1>Editing Menu #<%= @menu.id %></h1>
+
+
+<%= form_tag(menu_url(@menu), method: 'patch') do %>
+
+  <div>
+    <%= label_tag :restaurant_id %><br />
+    <%= number_field_tag :restaurant_id, @menu.restaurant_id %>
+  </div>
+
+  <div>
+    <%= label_tag :item %><br />
+    <%= text_field_tag :item, @menu.item %>
+  </div>
+
+  <div>
+    <%= label_tag :calories %><br />
+    <%= number_field_tag :calories, @menu.calories %>
+  </div>
+
+  <div>
+    <%= label_tag :fat %><br />
+    <%= number_field_tag :fat, @menu.fat %>
+  </div>
+
+  <div>
+    <%= label_tag :price %><br />
+    <%= number_field_tag :price, @menu.price %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Menu" %>
+  </div>
+
+<% end %>

@@ -1,0 +1,43 @@
+<h1 class="foodheader">Food Items</h1>
+
+<!-- <p><%= link_to 'Add a New Menu', new_menu_url %></p> -->
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <!-- <table>
+      <thead>
+        <tr>
+          <th class="listheader">Restaurant</th>
+          <th class="listheader">Item</th>
+          <th class="listheader">Calories</th>
+          <th class="listheader">Fat(g)</th>
+        </tr>
+      </thead>
+    </table> -->
+      <% @menus.each do |menu| %>
+        <div class="listitemsall">
+            <p class="listitem" id="listitemrest"><%= menu.restaurant_id %></p>
+            <p class="listitem" id="listitemname"><%= menu.item %></p>
+            <p class="listitem">Calories: <%= menu.calories %></p>
+            <p class="listitem">Fat (g): <%= menu.fat %></p>
+          </div>
+        <% end %>
+            <% if @menus.empty? %> 
+            <p>No Item Found</p>
+            <% end %>
+     <!--      <td><%#= menu.price %></td> -->
+      
+          <td><%#= link_to #'Show', menu_url(menu) %></td>
+          <td><%#= link_to 'Edit', edit_menu_url(menu) %></td>
+          <td><%#= link_to 'Destroy', menu_url(menu), method: 'delete', data: { confirm: "Do you really want to delete this menu?" } %></td>
+  </div>
+</div>
+  <div id="foodpagefooter">
+     <div class="col-md-6 col-md-offset-3">
+      <tr>
+        <th>Item</th>
+        <th>Calories</th>
+        <th>Fat</th>
+    </tr>
+    </div>
+  <div>
+

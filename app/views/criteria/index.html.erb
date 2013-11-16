@@ -1,0 +1,37 @@
+<div id="home">
+	<div class="container">
+	<%= form_tag "/menus", method: 'get' do %>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3 mainsection">
+			<h1 class="mainheader">Where are we eating?</h1>
+			<br>
+			<br>
+			<form role="form" class="main_form">
+			  <div class="form-group">
+			    <h2 class="homelabel"><%= label_tag :zipcode, "Zip Code" %></h2>
+			    <input type="text" Name="zip" SIZE="5" MAXLENGTH="5" class="form-control" id="zipcode" >
+			  </div>
+			  <br>
+			  <div class="form-group">
+			    <h2 class="homelabel"><%= label_tag :calories, "Maximum Calories" %></h2>
+			 	<div class="slider">
+				  <input type = "range" min="0" max="1500" name="calories" onchange="rangevalue.value=value"/>
+				  <span class="highlight"></span>
+					<output id="rangevalue">750</output>
+				</div>
+				  <h2 class="homelabel"><%= label_tag :fat, "Maximum Fat (g)" %></h2>
+			 	<div class="slider">
+				  <input type = "range" min="0" max="70" name="fat" onchange="rangevaluefat.value=value"/>
+				  <span class="highlight"></span>
+					<output id="rangevaluefat">35</output>
+				</div>
+			    	<p>
+					 <button type="submit" class="btn btn-primary btn-lg homepagebutton">Submit</button>
+					</p>
+			  </div>
+			</form>
+		</div>
+	</div>
+	<% end %>
+	</div>
+</div>
