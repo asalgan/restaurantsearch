@@ -1,24 +1,18 @@
+<div id="sortpage">
 <h1 class="foodheader">Food Items</h1>
 
 <!-- <p><%= link_to 'Add a New Menu', new_menu_url %></p> -->
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <!-- <table>
-      <thead>
-        <tr>
-          <th class="listheader">Restaurant</th>
-          <th class="listheader">Item</th>
-          <th class="listheader">Calories</th>
-          <th class="listheader">Fat(g)</th>
-        </tr>
-      </thead>
-    </table> -->
+  <div class="col-md-8 col-md-offset-2">
+    <p class="paramslist">Currently displaying food items with maximum <strong><%= params[:calories] %> calories</strong> and <strong><%= params[:fat] %> (g) of fat</strong> in <strong><%= params[:zip] %></strong>&emsp;<%= link_to 'Edit', root_url %></p>
       <% @menus.each do |menu| %>
         <div class="listitemsall">
+            <%= link_to 'X', menu_url(menu), method: 'delete', :class => "listitem delete"%>
             <p class="listitem" id="listitemrest"><%= menu.restaurant_id %></p>
             <p class="listitem" id="listitemname"><%= menu.item %></p>
             <p class="listitem">Calories: <%= menu.calories %></p>
             <p class="listitem">Fat (g): <%= menu.fat %></p>
+
           </div>
         <% end %>
             <% if @menus.empty? %> 
@@ -39,5 +33,5 @@
         <th>Fat</th>
     </tr>
     </div>
-  <div>
+</div>
 

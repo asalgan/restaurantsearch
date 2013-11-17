@@ -1,4 +1,28 @@
 RestaurantSearch::Application.routes.draw do
+  
+  #Routes for logging in/out
+  get '/login' => 'sessions#new'
+  get '/logout' => 'sessions#destroy'
+  post '/sessions' => 'sessions#create'
+
+
+  # Routes for the User resource:
+  # CREATE
+  get '/users/new', controller: 'users', action: 'new', :as => 'new_user'
+  post '/users', controller: 'users', action: 'create'
+
+  # READ
+  get '/users', controller: 'users', action: 'index'
+  get '/users/:id', controller: 'users', action: 'show', :as => 'user'
+
+  # UPDATE
+  get '/users/:id/edit', controller: 'users', action: 'edit', :as => 'edit_user'
+  patch '/users/:id', controller: 'users', action: 'update'
+
+  # DELETE
+  delete '/users/:id', controller: 'users', action: 'destroy'
+  #------------------------------
+
   # Routes for the Menu resource:
   # CREATE
   root 'criteria#index'
