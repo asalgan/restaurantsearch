@@ -1,8 +1,8 @@
 class MenusController < ApplicationController
 
   def index
-     @menus = Menu.where(['calories <= ?', params[:calories].to_i]) 
-     @menus = Menu.where(['fat <= ?', params[:fat].to_i]) 
+     #@menus = Menu.where(['calories <= ?', params[:calories].to_i]) && Menu.where(['fat <= ?', params[:fat].to_i])
+     @menus = Menu.where("calories <= '#{params[:calories]}' AND fat <= '#{params[:fat]}' ")
   end
 
   def show
@@ -19,6 +19,7 @@ class MenusController < ApplicationController
     @menu.item = params[:item]
     @menu.calories = params[:calories]
     @menu.fat = params[:fat]
+    @menu.category = params[:category]
     @menu.price = params[:price]
     
     if @menu.save

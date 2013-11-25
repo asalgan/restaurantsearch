@@ -6,6 +6,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(:id => params[:id])
+    if params[:id] =! session[:user_id]
+      redirect_to root_url
+    end
   end
 
   def new
@@ -14,19 +17,31 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new
-    @user.name = params[:user][:name]
-    @user.email = params[:user][:email]
-    @user.password = params[:user][:password]
+    @user.name = params[:name]
+    @user.email = params[:email]
+    @user.password = params[:password]
+    @user.password_confirmation = params[:password_confirmation]
     
     if @user.save
-      redirect_to users_url
+      session[:user_id] = @user.id
+      # redirect_to root_url
     else
       render 'new'
+    end
+
+    respond_to do |format|
+      if @user.save
+      UserMailer.welcome(@user).deliver
+      format.html {redirect_to root_url, notice: "Thanks for signing up!"}
+    end
     end
   end
 
   def edit
     @user = User.find_by(:id => params[:id])
+    if params[:id] =! session[:user_id]
+      redirect_to root_url
+    end
   end
 
   def update
@@ -46,5 +61,8 @@ class UsersController < ApplicationController
     @user = User.find_by(:id => params[:id])
     @user.destroy
     redirect_to users_url
+    if params[:id] =! session[:user_id]
+      redirect_to root_url
+    end
   end
 end

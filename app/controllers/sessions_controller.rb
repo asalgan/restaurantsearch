@@ -6,21 +6,21 @@ class SessionsController < ApplicationController
 
   def destroy
     reset_session
-    redirect_to root_url, notice: "See ya!"
+    redirect_to root_url
   end
 
   def create
     user = User.find_by(email: params[:email])
     if user.present?
-      if user.password == params[:password]
+      if user.authenticate(params[:password])
         # Yay!
         session[:user_id] = user.id
         redirect_to root_url, notice: "Hello, #{user.email}"
       else
-        redirect_to root_url, notice: "Bad password."
+        redirect_to login_url, notice: "Your password is incorrect"
       end
     else
-      redirect_to root_url, notice: "Unknown username."
+      redirect_to login_url, notice: "unknown email address"
     end
   end
 end
