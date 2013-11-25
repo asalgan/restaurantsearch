@@ -427,11 +427,11 @@ input[type="range"]::-webkit-slider-thumb:active {
 	font-size: 22px;
 }
 
-#editable {
+/*#editable {
    {margin-bottom: 10px; }
   [contenteditable="true"] { padding: 10px; outline: 2px dashed #CCC; }
   [contenteditable="true"] 
-}
+}*/
 
 #editable:hover {
 	outline: 2px dashed #0090D2; 
