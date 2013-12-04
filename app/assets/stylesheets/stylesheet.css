@@ -1,4 +1,4 @@
-@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
+@import url("http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
 
 html {
 	height: 100%
@@ -8,9 +8,9 @@ body {
 	background-color: #EDEEF0;
 }
 
-/*.col-xs-10 {
-	clear: both;
-}*/
+label {
+  display: inline;
+}
 
 #home {
 	background-image: url(cooking.jpg);
@@ -359,6 +359,11 @@ input[type="range"]::-webkit-slider-thumb:active {
 	}
 }
 
+.facebooklogin {
+	margin-top: 5%;
+	margin-left: 10%
+}
+
 .formheader {
 	color: white;
 	font-family: 'Pacifico', cursive;
@@ -407,6 +412,12 @@ input[type="range"]::-webkit-slider-thumb:active {
 
 .checkbox {
 	margin-left: -10px;
+	display: -webkit-box;
+}
+
+.checkboxname {
+	margin-left: 10px;
+	text-decoration: none;
 }
 
 .nearyoubox {

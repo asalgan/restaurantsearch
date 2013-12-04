@@ -1,0 +1,3 @@
+$('#<%= dom_id @menu %>').on("click", function() {
+  $.ajax({url: "/menus/" + $(this).data("menu-id") + "/edit", dataType: "script"});
+})

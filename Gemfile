@@ -6,10 +6,13 @@ gem "spreadsheet", "0.9.0"
 
 gem 'roo'
 
-
 gem 'starter_generators'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
+
+gem 'omniauth-twitter'
+
+gem 'omniauth-facebook'
 
 # Use sqlite3 as the database for Active Record
 group :development do

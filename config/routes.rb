@@ -1,6 +1,9 @@
 RestaurantSearch::Application.routes.draw do
   
   #Routes for logging in/out
+  match 'auth/:provider/callback', to: 'sessions#omniauth_create', via: [:get, :post]
+  match 'auth/failure', to: redirect('/'), via: [:get, :post]
+  match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
   get '/login' => 'sessions#new'
   get '/logout' => 'sessions#destroy'
   post '/sessions' => 'sessions#create'
