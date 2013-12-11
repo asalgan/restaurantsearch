@@ -14,6 +14,8 @@ gem 'omniauth-twitter'
 
 gem 'omniauth-facebook'
 
+gem 'geocoder'
+
 # Use sqlite3 as the database for Active Record
 group :development do
   # Use sqlite3 as the database for Active Record

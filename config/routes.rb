@@ -1,5 +1,22 @@
 RestaurantSearch::Application.routes.draw do
   
+  # Routes for the Location resource:
+  # CREATE
+  get '/locations/new', controller: 'locations', action: 'new', :as => 'new_location'
+  post '/locations', controller: 'locations', action: 'create'
+
+  # READ
+  get '/locations', controller: 'locations', action: 'index'
+  get '/locations/:id', controller: 'locations', action: 'show', :as => 'location'
+
+  # UPDATE
+  get '/locations/:id/edit', controller: 'locations', action: 'edit', :as => 'edit_location'
+  patch '/locations/:id', controller: 'locations', action: 'update'
+
+  # DELETE
+  delete '/locations/:id', controller: 'locations', action: 'destroy'
+  #------------------------------
+
   #Routes for logging in/out
   match 'auth/:provider/callback', to: 'sessions#omniauth_create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]

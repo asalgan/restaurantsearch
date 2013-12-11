@@ -1,0 +1,32 @@
+<h1>Locations</h1>
+
+<p><%= link_to 'Add a New Location', new_location_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @locations.each do |location| %>
+    <tr>
+      <td><%= location.address %></td>
+      <td><%= location.latitude %></td>
+      <td><%= location.longitude %></td>
+  
+      <td><%= link_to 'Show', location_url(location) %></td>
+      <td><%= link_to 'Edit', edit_location_url(location) %></td>
+      <td><%= link_to 'Destroy', location_url(location), method: 'delete', data: { confirm: "Do you really want to delete this location?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
