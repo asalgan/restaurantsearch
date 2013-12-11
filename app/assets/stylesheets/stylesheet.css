@@ -13,7 +13,7 @@ label {
 }
 
 #home {
-	background-image: url(app/assets/stylesheets/cooking.jpg);
+	background-image: url(cooking.jpg);
 	background-size: 100%;
 	background-repeat: no-repeat;
 }
