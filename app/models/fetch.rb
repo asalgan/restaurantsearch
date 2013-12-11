@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'roo'
 # require 'menu'
-require "/config/environment"
+# require "/config/environment"
 
 
   def fetch_excel_data
