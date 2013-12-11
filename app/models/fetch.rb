@@ -27,7 +27,7 @@ require 'roo'
   # end
   # end
 
-  fetch_excel_data
+  # fetch_excel_data
   # fetch_restaurants
   
 
