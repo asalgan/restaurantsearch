@@ -33,7 +33,7 @@
 					 <button type="submit" class="btn btn-primary btn-lg homepagebutton">Search</button>
 					</p>
 					<% if session[:user_id].present? %>
-					<p class="navlinks"><%= link_to "Sign Out", '/logout' %></p>
+					<p class="navlinkshome"><%= link_to "Sign Out", '/logout' %></p>
 					<% else %>
 					<p class="navlinkshome"><%= link_to 'Sign In |', '/login' %><%= link_to ' Register', '/users/new' %></p>
 					<% end %>
