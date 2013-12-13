@@ -18,20 +18,36 @@ label {
 	background-repeat: no-repeat;
 }
 
+#sortpage {
+	background-image: url(<%=asset_path('food.jpg')%>);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
 .navbar {
 	border-radius: 0px;
 	border: none;
-	background-color: #36393D;
+	background: rgba(0, 0, 0, 0);
 	margin-bottom: 0px;
 	height: 50px;
-}
 
+}
 .navlinks {
 	float: right;
 	font-size: 15px;
 }
 
+.navlinkshome {
+	float: right;
+	font-size: 15px;
+}
+
 .navlinks a {
+	color: #585858;
+}
+
+.navlinkshome a {
 	color: white;
 }
 
@@ -41,7 +57,7 @@ label {
 
 
 .navbar-brand a{
-	color: white;
+	color: #55B4B0;
 	text-decoration: none;
 	font-family: 'Pacifico', cursive;
 	font-size: 20px;
@@ -185,21 +201,41 @@ input[type="range"]::-webkit-slider-thumb:active {
 }
 
 .paramslist {
-	text-align: center;
+	float: left;
+	font-size: 36px;
+	padding-right: 460px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	color: #808080;
+	font-family: 'Raleway', sans-serif;
+}
+
+.editbutton {
+	font-size: 15px;
+}
+
+#foodpagecalories, #foodpagefat, #foodpagezip {
+	color: #585858;
 }
 
 #foodpagefooter {
-	height: 80px;
+	height: 100px;
     width: 100%; 
     background-image: none;
     background-repeat: repeat;
     background-attachment: scroll;
     background-position: 0% 0%;
-    background: rgba(54, 57, 61, 1);
+    background: #55B4B0;
     position: fixed;
     bottom: 0pt;
     left: 0pt;
+    opacity: .9;
 
+}
+
+#foodpagefooter p {
+	color: white;
+	margin-left: 0px;
 }
 
 .listheader {
@@ -211,7 +247,7 @@ input[type="range"]::-webkit-slider-thumb:active {
 }
 
 .listitem {
-	color: #686868;
+	color: #383838;
 	font-family: 'Roboto', sans-serif;
 	font-weight:100;
 	font-size: 10px;
@@ -225,18 +261,20 @@ input[type="range"]::-webkit-slider-thumb:active {
 }
 
 .listitemother{
-	color: #686868;
+	color: #202020;
 	font-size: 13px;
 	float: right;
+	margin-bottom: 0px;
 	margin-right: 20px;
 }
 
 .listitemsall {
 	background-color: white;
-	/*width: 90%;*/
-	height: 45px;
+	opacity: .9;
+	height: 24px;
 	border-bottom: 1px solid #E8E8E8;
 }
+
 
 .listitemsall:hover {
 	background-color: #E0E0E0;
@@ -374,8 +412,9 @@ input[type="range"]::-webkit-slider-thumb:active {
 }
 
 .browse {
-	height: 500px;
+	height: 700px;
 	background-color: white;
+	opacity: .9;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 100;
 	padding: 0px;
@@ -415,6 +454,10 @@ input[type="range"]::-webkit-slider-thumb:active {
 	display: -webkit-box;
 }
 
+#checkboxes {
+	padding-left: 0px;
+}
+
 .checkboxname {
 	margin-left: 10px;
 	text-decoration: none;
@@ -451,4 +494,13 @@ input[type="range"]::-webkit-slider-thumb:active {
 
 .editablelink {
 	text-decoration: underline;
+}
+
+.footer-list-name, .footer-list-calories {
+	color: white;
+	font-family: 'Roboto', sans-serif;
+}
+
+.footer-list-calories {
+	margin-left: 20px
 }

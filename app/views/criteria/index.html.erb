@@ -35,7 +35,7 @@
 					<% if session[:user_id].present? %>
 					<p class="navlinks"><%= link_to "Sign Out", '/logout' %></p>
 					<% else %>
-					<p class="navlinks"><%= link_to 'Sign In |', '/login' %><%= link_to ' Register', '/users/new' %></p>
+					<p class="navlinkshome"><%= link_to 'Sign In |', '/login' %><%= link_to ' Register', '/users/new' %></p>
 					<% end %>
 					<br>
 					

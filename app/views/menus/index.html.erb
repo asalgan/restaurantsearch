@@ -1,6 +1,7 @@
 <div id="sortpage">
 <!-- <h1 class="foodheader">Meals near you</h1><br> -->
-<p class="paramslist">Currently displaying food items with maximum <span id="calories"><strong><%= params[:calories] %></strong></span> calories and <strong><%= params[:fat] %> (g) of fat</strong> in <span id="editable" contenteditable="true" class="editablelink"><strong><%= params[:zip] %></strong></span>&emsp;<%= link_to 'Edit', root_url %></p>
+<div class="container">
+<p class="paramslist" class="col-md-6">Showing food items with maximum <span id="foodpagecalories"><strong><%= params[:calories] %> calories</strong></span>  and <span id="foodpagefat"><strong><%= params[:fat] %> (g) of fat</strong></span> in <span id="foodpagezip"><strong><%= params[:zip] %></strong></span>&emsp;<span class="editbutton"><%= link_to 'Edit', root_url %></p></span></div>
 
 <!-- <p><%= link_to 'Add a New Menu', new_menu_url %></p> -->
 <div class="container">
@@ -10,32 +11,32 @@
       <h2 class="filter">Filter <span class="glyphicon glyphicon-filter filtericon"></span></h2>
         <div class="browse">
           <h3 id="filterheader">Food Type</h3>
-          <div id="checkboxes">
-            <div class="checkbox"><input type="checkbox" id="a"><label for="a" class="checkboxname">Bakery</label></div>
-            <div class="checkbox"><input type="checkbox" id="b"><label for="b" class="checkboxname">BBQ</label></div>
-            <div class="checkbox"><input type="checkbox" id="c"><label for="c" class="checkboxname">Brazilian</label></div>
-            <div class="checkbox"><input type="checkbox" id="d"><label for="d" class="checkboxname">Breakfast</label></div>
-            <div class="checkbox"><input type="checkbox" id="e"><label for="e" class="checkboxname">Burgers</label></div>
-            <div class="checkbox"><input type="checkbox" id="f"><label for="f" class="checkboxname">Chinese</label></div>
-            <div class="checkbox"><input type="checkbox" id="g"><label for="g" class="checkboxname">Coffee/Tea</label></div>
-            <div class="checkbox"><input type="checkbox" id="h"><label for="h" class="checkboxname">Desserts</label></div>
-            <div class="checkbox"><input type="checkbox" id="i"><label for="i" class="checkboxname">Greek</label></div>
-            <div class="checkbox"><input type="checkbox" id="j"><label for="j" class="checkboxname">Hot Dogs/Sausages</label></div>
-            <div class="checkbox"><input type="checkbox" id="k"><label for="k" class="checkboxname">Indian</label></div>
-            <div class="checkbox"><input type="checkbox" id="l"><label for="l" class="checkboxname">Italian</label></div>
-            <div class="checkbox"><input type="checkbox" id="m"><label for="m" class="checkboxname">Japanese</label></div>
-            <div class="checkbox"><input type="checkbox" id="n"><label for="n" class="checkboxname">Mexican</label></div>
-            <div class="checkbox"><input type="checkbox" id="o"><label for="o" class="checkboxname">Middle Eastern</label></div>
-            <div class="checkbox"><input type="checkbox" id="p"><label for="p" class="checkboxname">Noodles</label></div>
-            <div class="checkbox"><input type="checkbox" id="q"><label for="q" class="checkboxname">Pizza</label></div>
-            <div class="checkbox"><input type="checkbox" id="r"><label for="r" class="checkboxname">Salad</label></div>
-            <div class="checkbox"><input type="checkbox" id="s"><label for="s" class="checkboxname">Sandwiches/Subs/Wraps</label></div>
-            <div class="checkbox"><input type="checkbox" id="t"><label for="t" class="checkboxname">Seafood</label></div>
-            <div class="checkbox"><input type="checkbox" id="u"><label for="u" class="checkboxname">Steakhouse</label></div>
-            <div class="checkbox"><input type="checkbox" id="v"><label for="v" class="checkboxname">Tapas</label></div>
-            <div class="checkbox"><input type="checkbox" id="w"><label for="w" class="checkboxname">Thai</label></div>
-            <div class="checkbox"><input type="checkbox" id="x"><label for="x" class="checkboxname">Vegetarian</label></div>
-          </div> 
+          <ul id="checkboxes">
+            <li class="checkbox"><input type="checkbox" id="a"><label for="a" class="checkboxname">Bakery</label></li>
+            <li class="checkbox"><input type="checkbox" id="b"><label for="b" class="checkboxname">BBQ</label></li>
+            <li class="checkbox"><input type="checkbox" id="c"><label for="c" class="checkboxname">Brazilian</label></li>
+            <li class="checkbox"><input type="checkbox" id="d"><label for="d" class="checkboxname">Breakfast</label></li>
+            <li class="checkbox"><input type="checkbox" id="e"><label for="e" class="checkboxname">Burgers</label></li>
+            <li class="checkbox"><input type="checkbox" id="f"><label for="f" class="checkboxname">Chinese</label></li>
+            <li class="checkbox"><input type="checkbox" id="g"><label for="g" class="checkboxname">Coffee/Tea</label></li>
+            <li class="checkbox"><input type="checkbox" id="h"><label for="h" class="checkboxname">Desserts</label></li>
+            <li class="checkbox"><input type="checkbox" id="i"><label for="i" class="checkboxname">Greek</label></li>
+            <li class="checkbox"><input type="checkbox" id="j"><label for="j" class="checkboxname">Hot Dogs/Sausages</label></li>
+            <li class="checkbox"><input type="checkbox" id="k"><label for="k" class="checkboxname">Indian</label></li>
+            <li class="checkbox"><input type="checkbox" id="l"><label for="l" class="checkboxname">Italian</label></li>
+            <li class="checkbox"><input type="checkbox" id="m"><label for="m" class="checkboxname">Japanese</label></li>
+            <li class="checkbox"><input type="checkbox" id="n"><label for="n" class="checkboxname">Mexican</label></li>
+            <li class="checkbox"><input type="checkbox" id="o"><label for="o" class="checkboxname">Middle Eastern</label></li>
+            <li class="checkbox"><input type="checkbox" id="p"><label for="p" class="checkboxname">Noodles</label></li>
+            <li class="checkbox"><input type="checkbox" id="q"><label for="q" class="checkboxname">Pizza</label></li>
+            <li class="checkbox"><input type="checkbox" id="r"><label for="r" class="checkboxname">Salad</label></li>
+            <li class="checkbox"><input type="checkbox" id="s"><label for="s" class="checkboxname">Sandwiches/Subs/Wraps</label></li>
+            <li class="checkbox"><input type="checkbox" id="t"><label for="t" class="checkboxname">Seafood</label></li>
+            <li class="checkbox"><input type="checkbox" id="u"><label for="u" class="checkboxname">Steakhouse</label></li>
+            <li class="checkbox"><input type="checkbox" id="v"><label for="v" class="checkboxname">Tapas</label></li>
+            <li class="checkbox"><input type="checkbox" id="w"><label for="w" class="checkboxname">Thai</label></li>
+            <li class="checkbox"><input type="checkbox" id="x"><label for="x" class="checkboxname">Vegetarian</label></li>
+          </ul> 
         </div>
         </div><!--end filterbox-->
       </div><!--end col-md-3-->
@@ -47,28 +48,28 @@
         <% @menus.each do |menu| %>
           <div class="listitemsall">
            <!--<%= link_to 'X', menu_url(menu), method: 'delete', :class => "listitem delete"%>-->
+
+          <!--create span classes for each menu.element and use append javacsript to pull that number into an invisible div in the footer--><div class="listlineitem">
            <p class="listitem" id="listitemrest"><%= menu.restaurant_id %></p>
-           <div class="listofitems"><p class="listitem" id="listitemname"><%= menu.item %></p>
-           <p class="listitem listitemother">Calories: <%= menu.calories %></p>
-           <p class="listitem listitemother">Fat (g): <%= menu.fat %></p>
-           <p class="listitem listitemother"><%= menu.category %></p></div>
-          </div>
+           <span class="listofitems"><p class="listitem list-name" id="listitemname"><%= menu.item %></p>
+           <p class="listitem list-calories listitemother">Calories: <span id="calories"><%= menu.calories %></span></p>
+           <p class="listitem list-fat listitemother">Fat (g): <%= menu.fat %></p>
+           <p class="listitem list-category listitemother"><%= menu.category %></p></div>
+          </div><!--end listitemsall-->
         <% end %>
-      </div>
+      </div><!--end listtable-->
          <% if @menus.empty? %> 
          <p>No Item Found</p>
         <% end %>
-       <!--      <td><%#= menu.price %></td> -->
-        
-            <td><%#= link_to #'Show', menu_url(menu) %></td>
-            <td><%#= link_to 'Edit', edit_menu_url(menu) %></td>
-            <td><%#= link_to 'Destroy', menu_url(menu), method: 'delete', data: { confirm: "Do you really want to delete this menu?" } %></td>
-    </div>
-  </div>
-    <div id="foodpagefooter">
-       <div class="col-md-6 col-md-offset-3">
-        
-      </div>
-    </div>
+    </div><!--end col-md-9-->
+  </div><!--end row-->
 </div>
+      <div class="row">
+      <div id="foodpagefooter">
+
+     <!--  <p>Food Item</p> -->
+    </div><!--end foodpagefooter-->
+    </div><!--end row-->
+  </div><!--end container-->
+</div><!--end sortpage-->
 
