@@ -5,7 +5,10 @@ class CreateMenus < ActiveRecord::Migration
       t.string :item
       t.integer :calories
       t.integer :fat
+      t.integer :carbs
       t.integer :price
+      t.string :category
+      t.string :restaurant
     end
   end
 end

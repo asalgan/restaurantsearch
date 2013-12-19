@@ -1,7 +1,6 @@
 class MenusController < ApplicationController
 
   def index
-     #@menus = Menu.where(['calories <= ?', params[:calories].to_i]) && Menu.where(['fat <= ?', params[:fat].to_i])
      @menus = Menu.where("calories <= '#{params[:calories]}' AND fat <= '#{params[:fat]}' ")
   end
 
@@ -21,6 +20,7 @@ class MenusController < ApplicationController
     @menu.fat = params[:fat]
     @menu.category = params[:category]
     @menu.price = params[:price]
+    @menu.restaurant = params[:restaurant]
     
     if @menu.save
       redirect_to menus_url
@@ -40,6 +40,7 @@ class MenusController < ApplicationController
     @menu.calories = params[:calories]
     @menu.fat = params[:fat]
     @menu.price = params[:price]
+    @menu.restaurant = params[:restaurant]
     
     if @menu.save
       redirect_to menus_url

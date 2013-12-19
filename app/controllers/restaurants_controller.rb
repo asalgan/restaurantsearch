@@ -9,15 +9,14 @@ class RestaurantsController < ApplicationController
   end
 
   def new
-    @restuarant = Restaurant.new
+    @restaurant = Restaurant.new
   end
 
   def create
     @restaurant = Restaurant.new
     @restaurant.name = params[:name]
     @restaurant.location = params[:location]
-    @restaurant.cuisine = params[:cuisine]
-    
+    @restaurant.cuisine = params[:cuisine]    
     if @restaurant.save
       redirect_to restaurants_url
     else

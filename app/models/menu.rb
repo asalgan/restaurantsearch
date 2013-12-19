@@ -1,9 +1,3 @@
 class Menu < ActiveRecord::Base
-
-	# before_save :find_restaurant
-
-
-	# def find_restaurant
-		
-	# end
+	belongs_to :restaurant, :class_name => "Restaurant", :foreign_key => :restaurant_id
 end

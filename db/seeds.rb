@@ -21,17 +21,18 @@ require 'roo'
       carbs = ex.cell(line,'D')
       category = ex.cell(line,'E')
       restaurant = ex.cell(line,'F')
-      @menu = Menu.create(:item => item,:calories => calories,:fat => fat,:carbs => carbs,:category => category) #:restaurant_id => Restaurant.find_by_name(restaurant).id )
+      @menu = Menu.create(:item => item,:calories => calories,:fat => fat,:carbs => carbs,:category => category,:restaurant => restaurant)
   end
   end
 
-  #   def fetch_restaurants
-  #     ex = Roo::Excel.new("../../public/restaurants.xls")
-  #     ex.default_sheet = ex.sheets[0] #Mention the sheet number
-  #     2.upto(3) do |line| #start and end of row
-  #     restaurant = ex.cell(line,'A')
-  #     @restaurant = Restaurant.create(:restaurant => restaurant)
-  # end
-  # end
+    def fetch_restaurants
+      ex = Roo::Excel.new("public/restaurants.xls")
+      ex.default_sheet = ex.sheets[0] #Mention the sheet number
+      2.upto(11) do |line| #start and end of row
+      name = ex.cell(line,'A')
+      @restaurant = Restaurant.create(:name => name)
+  end
+  end
 
   fetch_excel_data
+  fetch_restaurants

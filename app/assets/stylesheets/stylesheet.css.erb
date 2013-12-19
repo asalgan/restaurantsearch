@@ -6,6 +6,7 @@ html {
 
 body {
 	background-color: #EDEEF0;
+	height: 100%;
 }
 
 label {
@@ -14,15 +15,24 @@ label {
 
 #home {
 	background-image: url(<%=asset_path('cooking.jpg')%>);
+	height: 100%;
 	background-size: 100%;
 	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+
 }
 
 #sortpage {
+	height: 100%;
 	background-image: url(<%=asset_path('food.jpg')%>);
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
 }
 
 .navbar {
@@ -230,6 +240,7 @@ input[type="range"]::-webkit-slider-thumb:active {
     bottom: 0pt;
     left: 0pt;
     opacity: .9;
+    overflow: auto;
 
 }
 
@@ -506,5 +517,5 @@ input[type="range"]::-webkit-slider-thumb:active {
 }
 
 .footer-list-calories {
-	margin-left: 20px
+
 }
