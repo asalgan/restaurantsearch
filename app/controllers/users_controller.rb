@@ -46,9 +46,9 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find_by(:id => params[:id])
-    @user.name = params[:user][:name]
-    @user.email = params[:user][:email]
-    @user.password = params[:user][:password]
+    @user.name = params[:name]
+    @user.email = params[:email]
+    @user.password = params[:password]
     
     if @user.save
       redirect_to users_url
@@ -64,5 +64,11 @@ class UsersController < ApplicationController
     if params[:id] =! session[:user_id]
       redirect_to root_url
     end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end

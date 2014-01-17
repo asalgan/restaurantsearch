@@ -12,6 +12,7 @@
 
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require bootstrapselect
 //= require turbolinks
 //= require_tree .
@@ -23,23 +24,29 @@ $(document).ready(function() {
     
   });
   $('.selectpicker').selectpicker();
+  $('.glyphicon-heart').click(function() {
+    $(this)
+        .css('color','#E36A5B');
+    });
+
+});
 
 
  
-   $('.listlineitem').click(function() {
-    var name = $(this).find('span p.list-name').text();
-    var category = $(this).find('span p.list-category').text();
-    var calories = parseInt($(this).find('span p.list-calories').text().replace('Calories: ', ''));
-    var fat = $(this).find('span p.list-fat').text();
-    $('#foodpagefooter').append("<div class = 'container'><span class='footer-list-name'>"+name+"</span><span class = 'footer-list-calories'>"+calories+"</span></div>");
+//    $('.listlineitem').click(function() {
+//     var name = $(this).find('span p.list-name').text();
+//     var category = $(this).find('span p.list-category').text();
+//     var calories = parseInt($(this).find('span p.list-calories').text().replace('Calories: ', ''));
+//     var fat = $(this).find('span p.list-fat').text();
+//     $('#foodpagefooter').append("<div class = 'container'><span class='footer-list-name'>"+name+"</span><span class = 'footer-list-calories'>"+calories+"</span></div>");
     
-    var sum = 0.0;
-    $('.footer-list-calories').each(function()
-      {
-     sum += parseFloat($(this).text());
-        });
-      $('#foodpagefooter').append("<div class= 'sum'>"+sum+"></div>");
-  });
+//     var sum = 0.0;
+//     $('.footer-list-calories').each(function()
+//       {
+//      sum += parseFloat($(this).text());
+//         });
+//       $('#foodpagefooter').append("<div class= 'sum'>"+sum+"></div>");
+//   });
 
    
-});
+// });

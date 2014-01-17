@@ -3,8 +3,8 @@
 	<%= form_tag "/menus", method: 'get' do %>
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1 mainsection">
-				<% if session[:user_id].present? %>
-				<h1 class="mainheader">Where are we eating <%= User.find_by(id: session[:user_id]).name %>?</h1>
+				<% if signed_in? %>
+				<h1 class="mainheader">Where are we eating <%= User.find_by(id: session[:user_id]).name.capitalize %>?</h1>
 				<% else %>
 				<h1 class="mainheader">Where are we eating?</h1>
 				<% end %>
@@ -29,13 +29,7 @@
 				  <span class="highlight"></span>
 					<output id="rangevaluefat">35</output>
 				</div> -->
-				<h2 class="homelabel"><%= label_tag :category, "Category" %></h2>
 
-				<select class="selectpicker" multiple title='Choose one of the following...'>
-				    <option>Mustard</option>
-				    <option>Ketchup</option>
-				    <option>Relish</option>
-				</select>
 
 
 
@@ -55,10 +49,10 @@
 			    	<p class="buttonsubmit">
 					 <button type="submit" class="btn btn-primary btn-lg homepagebutton">Search</button>
 					</p>
-					<% if session[:user_id].present? %>
-					<p class="navlinkshome"><%= link_to "Sign Out", '/logout' %></p>
+					<% if signed_in? %>
+					<p class="navlinkshome"><%= link_to "Sign Out", signout_path, method: "delete" %></p>
 					<% else %>
-					<p class="navlinkshome"><%= link_to 'Sign In |', '/login' %><%= link_to ' Register', '/users/new' %></p>
+					<p class="navlinkshome"><%= link_to 'Sign In', signin_path %><%= link_to ' Register', '/users/new' %></p>
 					<% end %>
 					<br>
 					

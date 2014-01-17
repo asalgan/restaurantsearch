@@ -5,7 +5,6 @@ class MenusController < ApplicationController
   end
 
   def show
-    @menu = Menu.find_by(:id => params[:id])
   end
 
   def new

@@ -37,10 +37,11 @@
           <h2 class="nearyou">Meals near you <span class="glyphicon glyphicon-map-marker mapmarker"></span></h2>
           </div>
       <div class="listtable">
-        <% @menus.each do |menu| %>
+        <div class="col-md-10 col-md-offset-1">
+      <% @menus.each do |menu| %>
           <div class="listitemsall">
            <div class="listlineitem">
-           <p class="listitem" id="listitemrest"><%= menu.restaurant_id %></p>
+            <span class="glyphicon glyphicon-heart"></span>
            <span class="listofitems"><p class="listitem list-name" id="listitemname"><%= menu.item %></p>
            <p class="listitem list-calories listitemother">Calories: <span id="calories"><%= menu.calories %></span></p>
            <p class="listitem list-fat listitemother">Fat (g): <%= menu.fat %></p>
@@ -48,6 +49,7 @@
            <p class="listitem list-category listitemother"><%= menu.restaurant %></p></div>
           </div><!--end listitemsall-->
         <% end %>
+    </div>
       </div><!--end listtable-->
          <% if @menus.empty? %> 
          <p>No Item Found</p>
