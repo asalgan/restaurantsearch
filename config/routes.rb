@@ -1,7 +1,9 @@
 RestaurantSearch::Application.routes.draw do
   
   root 'criteria#index'
+  resources :users
   resources :sessions, only: [:new, :create, :destroy]
+
   # Routes for the Location resource:
   # CREATE
   get '/locations/new', controller: 'locations', action: 'new', :as => 'new_location'
@@ -24,24 +26,8 @@ RestaurantSearch::Application.routes.draw do
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
   match '/signout', to: 'sessions#destroy', via: 'delete'
   match '/signin',  to: 'sessions#new',         via: 'get'
-  post '/sessions' => 'sessions#create'
+  match '/signup', to: 'users#new', via: 'get'
 
-
-  # Routes for the User resource:
-  # CREATE
-  get '/users/new', controller: 'users', action: 'new', :as => 'new_user'
-  post '/users', controller: 'users', action: 'create'
-
-  # READ
-  get '/users', controller: 'users', action: 'index'
-  get '/users/:id', controller: 'users', action: 'show', :as => 'user'
-
-  # UPDATE
-  get '/users/:id/edit', controller: 'users', action: 'edit', :as => 'edit_user'
-  patch '/users/:id', controller: 'users', action: 'update'
-
-  # DELETE
-  delete '/users/:id', controller: 'users', action: 'destroy'
   #------------------------------
 
   # Routes for the Menu resource:

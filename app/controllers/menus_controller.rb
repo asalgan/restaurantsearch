@@ -2,6 +2,7 @@ class MenusController < ApplicationController
 
   def index
      @menus = Menu.where("calories <= '#{params[:calories]}' AND fat <= '#{params[:fat]}' ")
+     @random = Menu.where("calories <= '#{params[:calories]}' AND fat <= '#{params[:fat]}' ").sample 
   end
 
   def show
