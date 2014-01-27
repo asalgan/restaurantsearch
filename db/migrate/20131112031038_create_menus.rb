@@ -9,6 +9,7 @@ class CreateMenus < ActiveRecord::Migration
       t.integer :price
       t.string :category
       t.string :restaurant
+      t.string :category_name
     end
   end
 end

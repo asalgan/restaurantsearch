@@ -10,6 +10,32 @@ require 'roo'
 # require 'menu'
 # require "/config/environment"
 
+Category.destroy_all
+
+Category.create(name: "Bakery")
+Category.create(name: "BBQ")
+Category.create(name: "Brazilian")
+Category.create(name: "Breakfast")
+Category.create(name: "Burgers")
+Category.create(name: "Chinese")
+Category.create(name: "Coffee/Tea")
+Category.create(name: "Desserts")
+Category.create(name: "Greek")
+Category.create(name: "Hot Dogs/Sausages")
+Category.create(name: "Indian")
+Category.create(name: "Italian")
+Category.create(name: "Japanese")
+Category.create(name: "Mexican")
+Category.create(name: "Middle Eastern")
+Category.create(name: "Noodles")
+Category.create(name: "Pizza")
+Category.create(name: "Salad")
+Category.create(name: "Sandwiches/Subs/Wraps")
+Category.create(name: "Seafood")
+Category.create(name: "Steakhouse")
+Category.create(name: "Tapas")
+Category.create(name: "Thai")
+Category.create(name: "Vegetarian")
 
   def fetch_excel_data
       ex = Roo::Excel.new("public/fooditems.xls")
@@ -20,10 +46,17 @@ require 'roo'
       fat = ex.cell(line,'C')
       carbs = ex.cell(line,'D')
       category = ex.cell(line,'E')
+      # category_id = ex.cell(line,'F')
       # restaurant = ex.cell(line,'F')
-      @menu = Menu.create(:item => item,:calories => calories,:fat => fat,:carbs => carbs,:category => category)
+      @menu = Menu.create(:item => item,:calories => calories,:fat => fat,
+              :carbs => carbs,:category => category)
   end
-  end
+
+  
+
+
+
+end
 
   #   def fetch_restaurants
   #     ex = Roo::Excel.new("public/restaurants.xls")

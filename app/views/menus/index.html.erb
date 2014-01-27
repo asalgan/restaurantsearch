@@ -14,6 +14,33 @@
 				</div>
 			</div>
 	</div><!--end row-->
+
+		<div class="controls">
+			<ul>
+				 <li class="filter" data-filter="all">Show all</li>
+				<% @categories.each do |category| %>
+			    <li class="filter" data-filter="<%= category.name %>"><%= category.name %></li>
+			    <% end %>
+			</ul>
+		</div>
+<!-- 		<div class="controls">
+			<ul>
+			    <li class="sort" data-sort="data-cat" data-order="desc">Descending</li>
+			    <li class="sort" data-sort="data-cat" data-order="asc">Ascending</li>
+			    <li class="sort" data-sort="default" data-order-"desc">Default</li>
+			</ul>
+		</div> -->
+		<ul id="Grid" style="   ">
+			<% @menus.each do |food| %>
+			<li class="mix <%= food.category %> mix_all" data-cat="<%= food.category %>" style="  display: inline-block; opacity: 1;"><%= food.item %></li>
+			<% end %>
+<!-- 			<li class="mix category_1 mix_all" data-cat="1" style="  display: inline-block; opacity: 1;">1</li>
+			<li class="mix category_2 mix_all" data-cat="2" style="  display: inline-block; opacity: 1;">2</li>
+			<li class="mix category_2 mix_all" data-cat="2" style="  display: inline-block; opacity: 1;">2</li>
+			<li class="mix category_3 mix_all" data-cat="3" style="  display: inline-block; opacity: 1;">3</li>
+			<li class="mix category_3 mix_all" data-cat="3" style="  display: inline-block; opacity: 1;">3</li> -->
+			<li class="gap"></li>
+		</ul>
   </div><!--end container-->
 </div><!--end sortpage-->
 

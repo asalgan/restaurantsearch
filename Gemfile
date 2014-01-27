@@ -14,6 +14,8 @@ gem 'omniauth-twitter'
 
 gem 'omniauth-facebook'
 
+gem 'bootstrap-sass', '2.3.2.0'
+
 gem 'geocoder'
 
 # Use sqlite3 as the database for Active Record

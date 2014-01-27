@@ -17,7 +17,7 @@
 			  </div>
 			  <br>
 			  <div class="form-group">
-			    <h2 class="homelabel"><%= label_tag :calories, "Maximum Calories" %></h2>
+			    <h2 class="homelabel"><%= label_tag :calories, "Maximum Calories", session[:calories] %></h2>
 			 	<div class="slider">
 				  <input type = "range" min="0" max="1500" name="calories" onchange="rangevalue.value=value"/>
 				  <span class="highlight"></span>
@@ -29,11 +29,6 @@
 				  <span class="highlight"></span>
 					<output id="rangevaluefat">35</output>
 				</div> -->
-
-
-
-
-
 				<!-- <div class="chosen-container chosen-container-multi" multiple style="width: 550px;">
 					<select data-placeholder='Select a category..' class="chosen-select" multiple style="width: 550px; display: none;" tabindex='-1'>
 							<% @menus.order("category").each.to_a.uniq! do |item| %>
@@ -45,9 +40,8 @@
     						</option>
     			</select>
     		</div> -->
-    		
 			    	<p class="buttonsubmit">
-					 <button type="submit" class="btn btn-primary btn-lg homepagebutton">Search</button>
+					 <button type="submit" class="btn btn-primary btn-lg homepagebutton" :mem_cache_store >Search</button>
 					</p>
 					<% if signed_in? %>
 					<p class="navlinkshome"><%= link_to "Sign Out", signout_path, method: "delete" %></p>

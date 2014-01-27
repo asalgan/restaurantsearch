@@ -2,8 +2,6 @@ class SessionsController < ApplicationController
 
   def new
   end
-
-  
   
   # def omniauth_destroy
   #   session[:user_id] = nil

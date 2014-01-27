@@ -1,6 +1,0 @@
-
-  # fetch_restaurants
-  
-
- 
- 

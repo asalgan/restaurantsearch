@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RestaurantSearch</title>
+  <title>Where are we eating?</title>
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="js/jquery.mixitup.min.js"></script>
   <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-  <script src="app/assets/javascripts/jquery.icheck.js"></script>
-  
-  <link href="skins/square/orange.css" rel="stylesheet">
-  <link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Raleway:400,200|Titillium+Web' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,100' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
@@ -36,6 +33,9 @@
       });
    </script>
 <%= render 'layouts/header' unless @disable_nav %>
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
 <%= yield %>
 </body>
 </html>

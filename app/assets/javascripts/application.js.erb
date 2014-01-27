@@ -13,21 +13,22 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require bootstrapselect
 //= require turbolinks
 //= require_tree .
 
 $(document).ready(function() {
 
-	$('#notes').on("click", "li", function() {
-    $.ajax({url: "/notes/" + $(this).data("note-id") + "/edit", dataType: "script"});
+	// $('#notes').on("click", "li", function() {
+ //    $.ajax({url: "/notes/" + $(this).data("note-id") + "/edit", dataType: "script"});
     
-  });
-  $('.selectpicker').selectpicker();
-  $('.glyphicon-heart').click(function() {
-    $(this)
-        .css('color','#E36A5B');
-    });
+ //  });
+ //  $('.selectpicker').selectpicker();
+ //  $('.glyphicon-heart').click(function() {
+ //    $(this)
+ //        .css('color','#E36A5B');
+ //    });
+
+  $('#Grid').mixitup();
 
 });
 
