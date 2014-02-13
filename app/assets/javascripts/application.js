@@ -19,14 +19,10 @@
 
 $(document).ready(function() {
 
-	// $('#notes').on("click", "li", function() {
- //    $.ajax({url: "/notes/" + $(this).data("note-id") + "/edit", dataType: "script"});
-    
- //  });
   $('.selectpicker').selectpicker();
 
   $('.fa-heart').click(function() {
-    $(this).toggleClass( "heart" );
+    $(this).toggleClass("heart").fadeIn("slow");;
   });
     	
 
@@ -35,16 +31,8 @@ $(document).ready(function() {
   /* Activating Best In Place */
   $(".best_in_place").best_in_place();
 
-  $("#zipcode").geocomplete();  // Option 1: Call on element.
+  $("#zipcode").geocomplete({country: 'us'});  // Option 1: Call on element.
 	$.fn.geocomplete("input"); // Option 2: Pass element as argument.
-
-	$("#zipcode").geocomplete({ details: "form" });
-
-  // $(".menu-item-info").hide();
-  // $(".fa-angle-double-right").click(function() {
-  // 	$(".menu-item-info").eq(this).toggle()
-
-  // });
 
 });
 
