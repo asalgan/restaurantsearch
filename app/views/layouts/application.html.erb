@@ -4,37 +4,17 @@
   <title>Where are we eating?</title>
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400|Raleway:400,200|Titillium+Web|Pacifico' rel='stylesheet' type='text/css'>
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script src="js/jquery.mixitup.min.js"></script>
-  <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-  <link href='http://fonts.googleapis.com/css?family=Raleway:400,200|Titillium+Web' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
-   <script>
-// $(function() {
-//   $("#refresh").click(function() {
-//      $(".randombox").load("/menus")
-//   })
-// })
-// </script>
+  <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-   <script>
-      $(document).ready(function(){
-        $('input').iCheck({
-          checkboxClass: 'icheckbox_square-orange',
-          radioClass: 'iradio_square-orange',
-          increaseArea: '10%' // optional
-        });
-      });
-   </script>
 <%= render 'layouts/header' unless @disable_nav %>
 <% flash.each do |key, value| %>
-  <div class="alert alert-<%= key %>"><%= value %></div>
+  <!-- <div class="alert alert-<%= key %>"><%= value %></div> -->
 <% end %>
 <%= yield %>
 </body>

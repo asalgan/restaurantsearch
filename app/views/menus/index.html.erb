@@ -1,10 +1,11 @@
 <div id="sortpage">
-<!-- <h1 class="foodheader">Meals near you</h1><br> -->
+<div class="header-image"></div>
   <div class="container">
+
 	<div class="row">
-		<p class="paramslist" class="col-md-6">Showing food items with maximum <span id="foodpagecalories"><strong><%= params[:calories] %> calories</strong></span>  
-			<!-- and <span id="foodpagefat"><strong><%= params[:fat] %> (g) of fat</strong></span>  -->
-			in <span id="foodpagezip"><strong><%= params[:zip] %></strong></span>&emsp;<span class="editbutton"><%= link_to 'Edit', root_url %></span></p>
+		<p class="paramslist" class="col-md-6">Showing <span id="foodpagecategory"><%= params[:category].downcase %></span> with maximum <span id="foodpagecalories"><%= params[:calories] %> calories</span> 
+			<!-- and <span id="foodpagefat"><%= params[:fat] %> (g) of fat</span>  -->
+			near <span id="foodpagezip"><%= params[:zip] %></span><span class="editbutton"><%= link_to 'Edit', root_url %></span></p>
 			<div class="randombox">
 				<div class="randomcontent">
 					<p class="random" id="randomitem"><%= @random.item %><br></p>
@@ -17,13 +18,14 @@
 
 		<div class="controls">
 			<ul>
-				 <li class="filter" data-filter="all">Show all</li>
+				 <li class="filter" data-filter="all"><em>Show all</em></li>
 				<% @categories.each do |category| %>
 			    <li class="filter" data-filter="<%= category.name %>"><%= category.name %></li>
 			    <% end %>
 			</ul>
 		</div>
-<!-- 		<div class="controls">
+		<hr class="line">
+		<!--<div class="controls">
 			<ul>
 			    <li class="sort" data-sort="data-cat" data-order="desc">Descending</li>
 			    <li class="sort" data-sort="data-cat" data-order="asc">Ascending</li>
@@ -32,7 +34,7 @@
 		</div> -->
 		<ul id="Grid" style="   ">
 			<% @menus.each do |food| %>
-			<li class="mix <%= food.category %> mix_all" data-cat="<%= food.category %>" style="  display: inline-block; opacity: 1;"><%= food.item %></li>
+			<li class="mix <%= food.category %> mix_all" data-cat="<%= food.category %>" style="  display: inline-block; opacity: 1;"><i class="fa fa-heart"></i> <%= food.item %> <span class="restaurant-name"><%= food.restaurant %></span><i class="fa fa-angle-double-right"></i></li>
 			<% end %>
 <!-- 			<li class="mix category_1 mix_all" data-cat="1" style="  display: inline-block; opacity: 1;">1</li>
 			<li class="mix category_2 mix_all" data-cat="2" style="  display: inline-block; opacity: 1;">2</li>

@@ -6,6 +6,8 @@ gem "spreadsheet", "0.9.0"
 
 gem 'roo'
 
+gem 'best_in_place', github: 'bernat/best_in_place'
+
 gem 'starter_generators'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'

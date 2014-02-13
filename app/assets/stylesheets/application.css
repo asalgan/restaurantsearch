@@ -12,8 +12,7 @@
  *= require_tree .
  */
 
- @import 'bootstrap.css';
- @import 'bootstrapselect.css';
+ @import 'bootstrap.css.scss';
  @import 'stylesheet.css';
- @import 'styles.css.scss';
+
  
