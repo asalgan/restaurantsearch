@@ -10,7 +10,7 @@
 				<option><%= category.name %></option>
 				<% end %>
 			</select>
-			</span> with maximum <span id="foodpagecalories"><%= params[:calories] %> calories</span> 
+			</span> with maximum <span id="foodpagecalories"><%= params[:calories] %></span> calories 
 			<!-- and <span id="foodpagefat"><%= params[:fat] %> (g) of fat</span>  -->
 			near <span id="foodpagezip"><%= params[:zip] %></span><span class="editbutton"><%= link_to 'Edit', root_url %></span></p>
 			<div class="randombox">
@@ -23,15 +23,17 @@
 			</div>
 	</div><!--end row-->
 
-		<div class="controls">
+		<!-- <div class="controls">
 			<ul>
 				 <li class="filter" data-filter="all"><em>Show all</em></li>
 				<% @categories.each do |category| %>
 			    <li class="filter" data-filter="<%= category.name %>"><%= category.name %></li>
 			    <% end %>
 			</ul>
-		</div>
+		</div> -->
 		<hr class="line">
+
+		
 		<!--<div class="controls">
 			<ul>
 			    <li class="sort" data-sort="data-cat" data-order="desc">Descending</li>
