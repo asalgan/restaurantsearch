@@ -20,7 +20,7 @@
 			    <h2 class="homelabel"><%= label_tag :calories, "Maximum calories" %></h2>
 			 	<div class="slider">
 				  <input type = "range" min="0" max="1500" name="calories" onchange="rangevalue.value=value"/>
-					<output class="rangevalue">750</output>
+					<output id="rangevalue">750</output>
 				</div>
 				<h2 class="homelabel"><%= label_tag :category, "Category"%></h2>
 					<select class="selectpicker" name="category" multiple>

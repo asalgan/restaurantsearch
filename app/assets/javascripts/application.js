@@ -24,7 +24,8 @@ $(document).ready(function() {
   $('.fa-heart').click(function() {
     $(this).toggleClass("heart").fadeIn("slow");;
   });
-    	
+    
+
 
   $('#Grid').mixitup();
 
@@ -32,7 +33,11 @@ $(document).ready(function() {
   $(".best_in_place").best_in_place();
 
   $("#zipcode").geocomplete({country: 'us'});  // Option 1: Call on element.
-	$.fn.geocomplete("input"); // Option 2: Pass element as argument.
+	$.fn.geocomplete("#zipcode"); // Option 2: Pass element as argument.
+
+  //   $("input[type='range']").change(function() {
+  // $(this).next('output').html(this.value);
+  //   }).change();
 
 });
 
