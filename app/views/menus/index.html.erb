@@ -3,7 +3,14 @@
   <div class="container">
 
 	<div class="row">
-		<p class="paramslist" class="col-md-6">Showing <span id="foodpagecategory"><%= params[:category].downcase %></span> with maximum <span id="foodpagecalories"><%= params[:calories] %> calories</span> 
+		<p class="paramslist" class="col-md-6">Showing <span id="foodpagecategory">
+			<select class="selectpicker" name="category" >
+				<option value="<%= params[:category].capitalize %>"><%= params[:category].capitalize %></option>
+				<% @categories.each do |category| %>
+				<option><%= category.name %></option>
+				<% end %>
+			</select>
+			</span> with maximum <span id="foodpagecalories"><%= params[:calories] %> calories</span> 
 			<!-- and <span id="foodpagefat"><%= params[:fat] %> (g) of fat</span>  -->
 			near <span id="foodpagezip"><%= params[:zip] %></span><span class="editbutton"><%= link_to 'Edit', root_url %></span></p>
 			<div class="randombox">

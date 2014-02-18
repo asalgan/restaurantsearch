@@ -213,6 +213,9 @@ input[type="range"] {
 	width: 0px;
 	font-family: 'Raleway', sans-serif;
 	width: 150px;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
 
 	&:hover {
 		background-color: #FFFFFF;
@@ -243,6 +246,22 @@ input[type="range"] {
 	color: #585858;
 	font-family: 'Lato', sans-serif;
 	font-weight: 200;
+
+	.btn-default {
+		border: none;
+		padding-left: 15px;
+		font-size: 36px;
+		color: #585858;
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+		margin-bottom: 10px;
+		border: 1px dashed gray;
+	}	
+}
+
+.bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]) {
+	width: 200px;
+	margin-bottom: 0px;
 }
 
 .editbutton {
@@ -318,16 +337,16 @@ input[type="range"] {
 	float: left;
 	left: 50%;
 	position: absolute;
-  margin-top: .2%;
+    margin-top: .2%;
 	margin-left: -260px;
-  -moz-border-radius: 7px;
-  -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
 }
 
 .feedback-input {
 	color: #36393D;
 	font-family: Helvetica, Arial, sans-serif;
-  font-weight:500;
+  	font-weight:500;
 	font-size: 18px;
 	border-radius: 0;
 	line-height: 22px;
@@ -469,9 +488,9 @@ input[type="range"] {
 	color: #C0C0C0;
 	margin-left: 5px;
 	padding:5px;
-	-webkit-transition: all 300ms ease;
-	-moz-transition: all 300ms ease;
-	-o-transition: all 300ms ease;
+	-webkit-transition: all 100ms ease;
+	-moz-transition: all 100ms ease;
+	-o-transition: all 100ms ease;
 
 	&:hover {
 		color: #E36A5B;
