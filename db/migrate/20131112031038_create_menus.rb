@@ -10,6 +10,7 @@ class CreateMenus < ActiveRecord::Migration
       t.string :category
       t.string :restaurant
       t.string :category_name
+      t.references :parent
     end
   end
 end

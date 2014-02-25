@@ -1,7 +1,6 @@
 class CriteriaController < ApplicationController
 	def index
 		@disable_nav = true
-		@menus = Menu.all
 		@categories = Category.all
 	end
 

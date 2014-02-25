@@ -13,15 +13,9 @@
 			</span> with maximum <span id="foodpagecalories"><%= params[:calories] %></span> calories 
 			<!-- and <span id="foodpagefat"><%= params[:fat] %> (g) of fat</span>  -->
 			near <span id="foodpagezip"><%= params[:zip] %></span><span class="editbutton"><%= link_to 'Edit', root_url %></span></p>
-			<div class="randombox">
-				<div class="randomcontent">
-					<p class="random" id="randomitem"><%= @random.item %><br></p>
-					<p class="random" id="randomcalories"><%= @random.calories %> calories<br></p>
-					<p class="random" id="randomcategory"><%= @random.category %></p>
-					Or <a href="/menus" id="refresh">pick something random for me</a>
-				</div>
-			</div>
+		
 	</div><!--end row-->
+
 
 		<!-- <div class="controls">
 			<ul>
@@ -41,16 +35,31 @@
 			    <li class="sort" data-sort="default" data-order-"desc">Default</li>
 			</ul>
 		</div> -->
+
+		<% @restaurants.each do |place| %>
+		<%#= @fooditems.each do |item| %>
+		<%= place.restaurant %>
+		<%#= item.item %>
+		<% end %>
+		<%# end %>
+
 		<ul id="Grid" style="   ">
 			<% @menus.each do |food| %>
-			<li class="mix <%= food.category %> mix_all" data-cat="<%= food.category %>" style="  display: inline-block; opacity: 1;"><i class="fa fa-heart"></i> <%= food.item %> <span class="restaurant-name"><%= food.restaurant %></span><i class="fa fa-angle-double-right"></i></li>
+				<li class="mix <%= food.category %> mix_all" data-cat="<%= food.category %>" style="  display: inline-block; opacity: 1;">
+					<i class="fa fa-star"></i> 
+						<%= food.item %>
+						<span class="restaurant-name">
+							<%= food.restaurant %>
+						</span>
+					<i class="fa fa-angle-double-right"></i>
+				</li>
 			<% end %>
 <!-- 			<li class="mix category_1 mix_all" data-cat="1" style="  display: inline-block; opacity: 1;">1</li>
 			<li class="mix category_2 mix_all" data-cat="2" style="  display: inline-block; opacity: 1;">2</li>
 			<li class="mix category_2 mix_all" data-cat="2" style="  display: inline-block; opacity: 1;">2</li>
 			<li class="mix category_3 mix_all" data-cat="3" style="  display: inline-block; opacity: 1;">3</li>
 			<li class="mix category_3 mix_all" data-cat="3" style="  display: inline-block; opacity: 1;">3</li> -->
-			<li class="gap"></li>
+			<!-- <li class="gap"></li> -->
 		</ul>
   </div><!--end container-->
 </div><!--end sortpage-->

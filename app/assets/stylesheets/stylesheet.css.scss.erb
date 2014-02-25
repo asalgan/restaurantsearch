@@ -85,15 +85,6 @@ display: block;
 -webkit-margin-end: auto;
 }
 
-.fa {
-	font-size: 12px;
-	padding-right: 4px;
-
-	&:hover {
-		cursor: pointer;
-	}
-}
-
 .mix_all {
 	font-family: 'Lato', sans-serif;
 	font-weight: 100;
@@ -488,23 +479,29 @@ input[type="range"] {
 	padding-top: 10px;
 }
 
-.fa-heart {
-	color: #C0C0C0;
+.fa-star {
+	color: #909090;
 	margin-left: 5px;
+	margin-right: 5px;
 	padding:5px;
+	font-size: 16px;
+	padding-right: 4px;
 	-webkit-transition: all 100ms ease;
 	-moz-transition: all 100ms ease;
 	-o-transition: all 100ms ease;
 
 	&:hover {
-		color: #E36A5B;
-		padding: 5px;
-		
+		color: #C0C0C0;
+		cursor: pointer;
 	}
 }
 
-.heart {
-	color:#E36A5B;
+.star {
+	color: #FFCC11;
+	&:hover {
+		color:#FCDC3B;
+		cursor: pointer;
+	}
 }
 
 .dropdown:hover {
@@ -654,4 +651,7 @@ hr {
 	background-color: blue;
 }
 
-
+.map-canvas {
+	height: 300px;
+	width: 300px;
+}

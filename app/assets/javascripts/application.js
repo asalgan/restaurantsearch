@@ -21,8 +21,8 @@ $(document).ready(function() {
 
   $('.selectpicker').selectpicker();
 
-  $('.fa-heart').click(function() {
-    $(this).toggleClass("heart").fadeIn("slow");;
+  $('.fa-star').click(function() {
+    $(this).toggleClass("star").fadeIn("slow");
   });
     
 
@@ -32,12 +32,10 @@ $(document).ready(function() {
   /* Activating Best In Place */
   $(".best_in_place").best_in_place();
 
-  $("#zipcode").geocomplete({country: 'us'});  // Option 1: Call on element.
-	$.fn.geocomplete("#zipcode"); // Option 2: Pass element as argument.
-
-  //   $("input[type='range']").change(function() {
-  // $(this).next('output').html(this.value);
-  //   }).change();
+  $("#zipcode").geocomplete({
+   country: 'us' // Option 1: Call on element.
+	 // map: ".map-canvas" // Option 2: Pass element as argument.
+  });
 
 });
 
