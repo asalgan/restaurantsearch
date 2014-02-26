@@ -36,22 +36,40 @@
 			</ul>
 		</div> -->
 
-		<% @restaurants.each do |place| %>
+		<%# @restaurants.each do |place| %>
 		<%#= @fooditems.each do |item| %>
-		<%= place.restaurant %>
+		<%#= place.restaurant %>
 		<%#= item.item %>
-		<% end %>
+		<%# end %>
 		<%# end %>
 
 		<ul id="Grid" style="   ">
 			<% @menus.each do |food| %>
 				<li class="mix <%= food.category %> mix_all" data-cat="<%= food.category %>" style="  display: inline-block; opacity: 1;">
-					<i class="fa fa-star"></i> 
-						<%= food.item %>
-						<span class="restaurant-name">
-							<%= food.restaurant %>
-						</span>
-					<i class="fa fa-angle-double-right"></i>
+					<ol class="default">
+						<i class="fa fa-star"></i>
+						<li><span class="calorie-amount-per-item"><%= food.calories %></span></li>
+						<li><span class="food-item"><%= food.item %></span></li>
+						<li><span class="restaurant-name"><%= food.restaurant %></span></li>
+						<i class="fa fa-angle-double-right"></i>
+					</ol>
+					<div class="under">
+						<div class="left">
+							<ol>
+								<i class="fa fa-star"></i>
+								<li><%= food.calories %> calories</li>
+								<li><%= food.fat %>g fat</li>
+							  <li><%= food.carbs %>g carbs</li>
+							</ol>
+						</div>
+						<div class="right">
+							<ol>
+								<li>
+									<p>Place directions here.</p>
+								</li>
+							</ol>
+						</div>
+					</div>
 				</li>
 			<% end %>
 <!-- 			<li class="mix category_1 mix_all" data-cat="1" style="  display: inline-block; opacity: 1;">1</li>

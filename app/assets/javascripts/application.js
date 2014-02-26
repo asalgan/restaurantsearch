@@ -35,8 +35,7 @@ $(document).ready(function() {
   $("#zipcode").geocomplete({
    country: 'us' // Option 1: Call on element.
 	 // map: ".map-canvas" // Option 2: Pass element as argument.
-  });
-
+  }); 
 });
 
 

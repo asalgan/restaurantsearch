@@ -8,6 +8,10 @@ label {
   display: inline;
 }
 
+ol {
+	padding-left: 0;
+}
+
 #home {
 	background-image: url(<%=asset_path('cooking.jpg')%>);
 	height: 100%;
@@ -19,8 +23,7 @@ label {
 	
 	.mainsection {
 	  background: rgba(54, 57, 61, .9);
-	  margin-top: 2%;
-	  margin-bottom:5%;
+	  margin-top: 1%;
 
 		 .mainheader {
 			font-family: 'Pacifico', cursive;
@@ -90,15 +93,13 @@ display: block;
 	font-weight: 100;
 }
 
-.restaurant-name {
-	font-size: 14px;
-	color: gray;
-	padding-left: 5px;
-}
-
 .navbar-inner {
 	background-color: white;
 	height: 50px;
+
+	.container {
+		height: 50px;
+	}
 }
 
 #sortpage {
@@ -137,12 +138,13 @@ display: block;
 	color: #585858;
 }
 
-.headernavlinks {
-	margin-top: 10%;
-}
-
 .navbar-brand {
 	margin-bottom: 0px;
+	height: 50px;
+
+	.navbar-right {
+		height: 50px;
+	}
 
 	a{
 		color: #55B4B0;
@@ -229,7 +231,7 @@ input[type="range"] {
 
 .paramslist {
 	padding-left: 15px;
-	width: 700px;
+	width: 100%;
 	float: left;
 	font-size: 36px;
 	margin-top: 30px;
@@ -474,9 +476,13 @@ input[type="range"] {
   border: 2px solid white;
 }
 
-.navbar-nav > li > a {
-	padding-bottom: 5px;
-	padding-top: 10px;
+.navbar-nav {
+	padding-top: 0px;
+	height: 50px;
+	
+	li a {
+		padding-bottom: 5px;
+	}
 }
 
 .fa-star {
@@ -504,12 +510,19 @@ input[type="range"] {
 	}
 }
 
-.dropdown:hover {
+.dropdown {
+	height: 50px;
+
+	&:hover {
 	background-color: #F8F8F8;
+	}
+
+	.dropdown-toggle {
+		margin-top: -5px;
+	}
 }
 
 .dropdown-menu {
-	padding-top: 0px;
 	margin-top: 0px;
 	border: 0px;
 	border-radius: 0px;
@@ -607,18 +620,74 @@ hr {
 		display: none;
 		opacity: 0;
 		width: 100%;
-		height: 30px;
-		margin-bottom: 10px;
-		margin-right: 10px;
+		height: 56px;
 		color: #333;
 		font-size: 20px;
 		text-align: left;
 		line-height: 20px;
 		float: left;
 		font-weight: 300;
-		/*border-left: 2px solid green;*/
-		padding-top: 4px;
-		padding-left: 10px;
+		padding-top: 17px;
+		padding-bottom: 17px;
+		border-bottom: 1px solid #E8E8E8;
+
+		.calorie-amount-per-item {
+			color: #787878 ;
+			font-size: 16px;
+			padding: 4px 8px;
+			border-radius: 5px;
+			background-color: #F0F0F0 ;
+			margin-right: 10px;
+			font-weight: 400;
+		}
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		.under {
+			display: none;
+			position: relative;
+			background-color: blue;
+		}
+
+		&:hover .under {
+			display: inline;
+			width: 100%;
+			cursor: pointer;
+			background-color: #E0E0E0;
+		}
+
+		&:hover .default {
+			display: none;
+		}
+
+		.default, .under {
+			
+			li {
+				display: inline;
+			}
+
+			.left {
+				float: left;
+
+				ol li {
+					border-left: 1px solid gray;
+					padding-left: 20px;
+					padding-right: 20px;
+				}
+			}
+
+			.right {
+				float: right;
+			}
+		}
+
+		.restaurant-name {
+			font-size: 15px;
+			color: gray;
+			padding-left: 5px;
+		}
 	}	
 
 	.gap {
