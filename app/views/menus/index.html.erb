@@ -57,9 +57,28 @@
 						<div class="left">
 							<ol>
 								<i class="fa fa-star"></i>
-								<li><%= food.calories %> calories</li>
-								<li><%= food.fat %>g fat</li>
-							  <li><%= food.carbs %>g carbs</li>
+								<li><%= food.item %></li>
+								<li>
+									<% if food.calories >= 667 %>
+										<span class="over-dv"><%= food.calories %> calories</span>
+									<% else %>
+										<span><%= food.calories %> calories</span>
+									<% end %>
+								</li>
+								<li>
+									<% if food.fat >= 21.7 %>
+										<span class="over-dv"><%= food.fat %>g fat</span>
+									<% else %>
+										<span><%= food.fat %>g fat</span>
+									<% end %>
+								</li>
+							  <li>
+							  	<% if food.carbs >= 100 %>
+							  		<span class="over-dv"><%= food.carbs %>g carbs</span>
+							  	<% else %>
+							  		<span><%= food.carbs %>g carbs</span>
+							  	<% end %>
+							  </li>
 							</ol>
 						</div>
 						<div class="right">

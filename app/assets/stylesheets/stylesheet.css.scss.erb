@@ -629,7 +629,10 @@ hr {
 		font-weight: 300;
 		padding-top: 17px;
 		padding-bottom: 17px;
-		border-bottom: 1px solid #E8E8E8;
+		border-bottom: 1px solid #E8E8E8 ;
+		-webkit-transition: all 200ms ease;
+	  -moz-transition: all 200ms ease;
+	  -o-transition: all 200ms ease;
 
 		.calorie-amount-per-item {
 			color: #787878 ;
@@ -642,20 +645,19 @@ hr {
 		}
 
 		&:hover {
+			background-color: #e7e7e7;
 			cursor: pointer;
 		}
 
 		.under {
 			display: none;
+			width: 100%;
 			position: relative;
-			background-color: blue;
 		}
 
 		&:hover .under {
 			display: inline;
-			width: 100%;
 			cursor: pointer;
-			background-color: #E0E0E0;
 		}
 
 		&:hover .default {
@@ -673,8 +675,8 @@ hr {
 
 				ol li {
 					border-left: 1px solid gray;
-					padding-left: 20px;
-					padding-right: 20px;
+					padding-left: 10px;
+					padding-right: 10px;
 				}
 			}
 
@@ -700,6 +702,10 @@ hr {
 		display: inline;
 		width: 100%;
 	}
+}
+
+.over-dv {
+	color: red;
 }
 
 .fa-circle {
