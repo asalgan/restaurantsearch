@@ -12,6 +12,7 @@ require 'roo'
 
 Category.destroy_all
 Menu.destroy_all
+# Restaurant.destroy_all
 
 Category.create(name: "American")
 Category.create(name: "Bakery")
@@ -40,6 +41,21 @@ Category.create(name: "Soup")
 Category.create(name: "Steak")
 Category.create(name: "Thai")
 Category.create(name: "Vegetarian")
+
+# Restaurant.create(name:"Applebee's")
+# Restaurant.create(name:"Arby's")
+# Restaurant.create(name:"Au Bon Pain")
+# Restaurant.create(name:"Baja Fresh")
+# Restaurant.create(name:"Chick-fil-A")
+# Restaurant.create(name:"Corner Bakery Cafe")
+# Restaurant.create(name:"Cosi")
+# Restaurant.create(name:"Domino's Pizza")
+# Restaurant.create(name:"Einstein Bros Bagels")
+# Restaurant.create(name:"Jamba Juice")
+# Restaurant.create(name:"Jason's Deli")
+# Restaurant.create(name:"McDonald's")
+# Restaurant.create(name:"McDonald's McCafe")
+# Restaurant.create(name:"Noodles & Company")
 
   def fetch_excel_data
       ex = Roo::Excel.new("public/fooditems.xls")

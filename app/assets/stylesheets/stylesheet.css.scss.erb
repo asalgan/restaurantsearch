@@ -96,6 +96,8 @@ display: block;
 .navbar-inner {
 	background-color: white;
 	height: 50px;
+	// border-bottom: 1px solid #D8D8D8;
+	-webkit-box-shadow: rgba(0,0,0,0.05) 0 2px;
 
 	.container {
 		height: 50px;
@@ -239,6 +241,8 @@ input[type="range"] {
 	color: #585858;
 	font-family: 'Lato', sans-serif;
 	font-weight: 200;
+	line-height: 58px;
+	text-align: center;
 
 	.btn-default {
 		border: none;
@@ -470,12 +474,6 @@ input[type="range"] {
 	padding-top: 20px;
 }
 
-.gravatar {
-  margin-right: 10px;
-  margin-top: -4px;
-  border: 2px solid white;
-}
-
 .navbar-nav {
 	padding-top: 0px;
 	height: 50px;
@@ -519,6 +517,14 @@ input[type="range"] {
 
 	.dropdown-toggle {
 		margin-top: -5px;
+	}
+
+	.gravatar {
+	  margin-right: 10px;
+	  margin-top: -4px;
+	  border: 2px solid white;
+	  border-radius: 50%;
+	  width: 35px;
 	}
 }
 
@@ -610,8 +616,15 @@ hr {
 	border-top: 1px solid #eee;
 }
 
-#Grid {
+.red-explanation {
 	padding-top: 100px;
+	font-size: 13px;
+	color: gray;
+	-webkit-font-smoothing: antialiased;
+}
+
+#Grid {
+	padding-top:20px;
 	width: 100%;
 	font-size: 0.1px;
 	padding-left: 0;
@@ -622,7 +635,7 @@ hr {
 		width: 100%;
 		height: 56px;
 		color: #333;
-		font-size: 20px;
+		font-size: 18px;
 		text-align: left;
 		line-height: 20px;
 		float: left;
@@ -633,6 +646,7 @@ hr {
 		-webkit-transition: all 200ms ease;
 	  -moz-transition: all 200ms ease;
 	  -o-transition: all 200ms ease;
+	  -webkit-font-smoothing: antialiased;
 
 		.calorie-amount-per-item {
 			color: #787878 ;
@@ -646,18 +660,38 @@ hr {
 
 		&:hover {
 			background-color: #e7e7e7;
-			cursor: pointer;
 		}
 
 		.under {
 			display: none;
 			width: 100%;
 			position: relative;
+
+			.right {
+				float: right;
+				margin-top: -5px;
+			}
+
+			.right-links {
+				border: 3px solid white;
+				// border-radius:10px;
+				padding: 5px 10px;
+				margin-right: 15px;
+				margin-left: 5px;
+
+				&:hover {
+					background-color: white;
+					cursor: pointer;
+					-webkit-transition: all 200ms ease;
+	  			-moz-transition: all 200ms ease;
+	  			-o-transition: all 200ms ease;
+				}
+			}
 		}
 
 		&:hover .under {
 			display: inline;
-			cursor: pointer;
+			cursor: default;
 		}
 
 		&:hover .default {
@@ -678,10 +712,6 @@ hr {
 					padding-left: 10px;
 					padding-right: 10px;
 				}
-			}
-
-			.right {
-				float: right;
 			}
 		}
 
@@ -729,4 +759,28 @@ hr {
 .map-canvas {
 	height: 300px;
 	width: 300px;
+}
+
+.profile {
+	width: 100%;
+	height: 150px;
+	background-color: #444;
+
+	.profile-header {
+		text-align: center;
+		font-family: 'Lato', sans-serif;
+		color: white;
+		font-weight: 200;
+		padding-bottom:10px;
+	}
+
+	.gravatar {
+		border-radius: 50%;
+		height: 150px;
+		width: 150px;
+		border: 3px solid white;
+		left: 50%;
+		position: fixed;
+		margin-left: -75px;
+	}
 }

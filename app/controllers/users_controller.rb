@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.new
     if user.signed_in?
       redirect_to root_url
+    end
   end
 
   def index
@@ -23,6 +24,7 @@ class UsersController < ApplicationController
 
     if user.signed_in?
       redirect_to root_url
+    end
   end
 
   def show
@@ -30,6 +32,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def update
@@ -57,7 +60,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email)
   end
 
-   # Before filters
+   #Before filters
 
     def signed_in_user
       unless signed_in?

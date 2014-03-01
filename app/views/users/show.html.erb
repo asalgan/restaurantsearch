@@ -1,13 +1,8 @@
-<h1>User #<%= @user.id %></h1>
-
-<p>
-  <b>Name:</b>
-  <%= @user.name %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
-
-
+<div class="profile">
+	<div class="container">
+		<h1 class="profile-header">Hi <%= @user.name.capitalize %></h1>
+		<p><%= gravatar_for @user %></p>
+		  <p><%= @user.email %></p>
+		<p><%= link_to "Edit profile", edit_user_url(current_user) %></p>
+	</div>
+</div>
