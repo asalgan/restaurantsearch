@@ -5,9 +5,6 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    if user.signed_in?
-      redirect_to root_url
-    end
   end
 
   def index
@@ -22,13 +19,17 @@ class UsersController < ApplicationController
       render 'new'
     end
 
-    if user.signed_in?
-      redirect_to root_url
-    end
+    # if user.signed_in?
+    #   redirect_to root_url
+    # end
   end
 
   def show
-   @user = User.find(params[:id])
+    @user = current_user
+    @categories = Category.all
+
+    user = current_user
+    @favorite = Favorite.where(:user_id => user.id)
   end
 
   def edit
@@ -42,10 +43,6 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
-  end
-
-  def show
-    @user = User.find(params[:id])
   end
 
   def destroy
@@ -65,7 +62,7 @@ class UsersController < ApplicationController
     def signed_in_user
       unless signed_in?
         store_location
-        redirect_to signin_url, notice: "Please sign in." 
+        redirect_to '/signin', notice: "Please sign in." 
       end
     end
 

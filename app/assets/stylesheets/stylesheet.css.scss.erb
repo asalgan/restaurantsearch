@@ -1,5 +1,8 @@
 @import url("http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
 
+$teal: #55B4B0;
+$bluegray: #36393D;
+
 html, body {
 	height: 100%;
 }
@@ -10,6 +13,31 @@ label {
 
 ol {
 	padding-left: 0;
+}
+
+li {
+	list-style: none;
+}
+
+%webkit_easing {
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+}
+
+%button {
+	border-radius: 0px;
+	background-color: $teal;
+	border: none;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	text-decoration: none;
+	@extend %webkit_easing;
+
+	&:hover {
+		background-color: white;
+		color: $bluegray;
+	}
 }
 
 #home {
@@ -50,7 +78,7 @@ ol {
 #rangevalue {
 	color: white;
 	font-family: 'Titillium Web', sans-serif;
-	background-color: #55B4B0;
+	background-color: $teal;
 	width: 40px;
 	text-align: center;
 	height: 30px;
@@ -71,23 +99,6 @@ ol {
 	font-family: 'Raleway', sans-serif;
 }
 
-.line {
-border-top: 1px solid #ccc;
-border-bottom: 0;
-border-left: 0;
-border-right: 0;
-color: #333;
-background-color: none;
-height: 2px;
-width: 660px;
-margin: auto;
-display: block;
--webkit-margin-before: 0.5em;
--webkit-margin-after: 0.5em;
--webkit-margin-start: auto;
--webkit-margin-end: auto;
-}
-
 .mix_all {
 	font-family: 'Lato', sans-serif;
 	font-weight: 100;
@@ -96,7 +107,6 @@ display: block;
 .navbar-inner {
 	background-color: white;
 	height: 50px;
-	// border-bottom: 1px solid #D8D8D8;
 	-webkit-box-shadow: rgba(0,0,0,0.05) 0 2px;
 
 	.container {
@@ -106,16 +116,37 @@ display: block;
 
 #sortpage {
 	height: 100%;
-	size: 100%;
-}
-
-.header-image {
 	background-image: url(<%=asset_path('food.jpg')%>);
 	height: 200px;
 	width: 100%;
-	/*position: fixed;*/
-	background-position: 30%;
+	background-position: 0px -210px;
 	background-repeat: no-repeat;
+	background-attachment: fixed;
+
+	.row {
+		margin-top: 220px;
+	}
+
+	.view-profile {
+		padding: 0;
+		border: 0;
+		display: block;
+		margin: 0 auto;
+	}
+
+	.view-profile-button {
+		@extend %button;
+		width: 230px;
+
+		&:hover {
+			background-color: darken($teal, 15%);
+			color: white;
+		}
+	}
+}
+
+.header-image {
+
 }
 
 .navbar {
@@ -148,8 +179,8 @@ display: block;
 		height: 50px;
 	}
 
-	a{
-		color: #55B4B0;
+	a {
+		color: $teal;
 		text-decoration: none;
 		font-family: 'Pacifico', cursive;
 		font-size: 20px;
@@ -200,32 +231,15 @@ input[type="range"] {
 }
 
 .homepagebutton {
-	border-radius: 0px;
+	@extend %button;
+	width: 150px;
 	margin-top: 20px;
 	margin-bottom: 0px;
-	background-color: #55B4B0;
-	border: none;
-	width: 0px;
-	font-family: 'Raleway', sans-serif;
-	width: 150px;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-
-	&:hover {
-		background-color: #FFFFFF;
-		color: #36393D;
-	}
-}
-
-.buttonsubmit {
-	width: 0px;
-	height: 40px;
 }
 
 .foodheader {
 	text-align: center;
-	color: #36393D;
+	color: $bluegray;
 	font-family: 'Raleway', sans-serif;
 	margin-top: 0px;
 	padding-top: 3%;
@@ -263,65 +277,21 @@ input[type="range"] {
 .editbutton {
 	font-size: 15px;
 	margin-left: 10px;
-	font-weight: 400;
+	font-weight: 300;
 }
 
 #foodpagecalories, #foodpagefat, #foodpagezip, #foodpagecategory {
 	color: #585858;
 	font-weight: 300;
+
+	&:hover {
+		cursor: pointer
+	}
 }
 
 #foodpagecalories {
 	border: 1px dashed gray;
-	padding: 6px 15px;
-}
-
-.listheader {
-	color:white;
-	font-family: 'Raleway', sans-serif;
-	font-size: 20px;
-	padding-left: 15px;
-	padding-right: 15px;
-}
-
-.listtable {
-	margin-bottom: 130px;
-}
-
-.listitem {
-	color: #383838;
-	font-family: 'Raleway', sans-serif;
-	font-weight:100;
-	font-size: 10px;
-	padding-left: 15px;
-	border-top: none;
-	display: inline;
-}
-
-#listitemname{
-	font-size: 17px;
-}
-
-.listitemother{
-	color: #202020;
-	font-size: 13px;
-	float: right;
-	margin-bottom: 0px;
-	margin-right: 20px;
-}
-
-.listitemsall {
-	background-color: white;
-	opacity: .9;
-	height: 24px;
-	border-bottom: 1px solid #E8E8E8;
-
-	&:hover {
-		background-color: #E0E0E0;
-		font-color: white;
-		cursor: pointer;
-		border: none;
-	}
+	padding: 10px 15px;
 }
 
 .signinform {
@@ -329,7 +299,7 @@ input[type="range"] {
 }
 
 #form-div {
-	background-color:#55B4B0;
+	background-color:$teal;
 	padding-left:35px;
 	padding-right:35px;
 	padding-top:5px;
@@ -338,16 +308,16 @@ input[type="range"] {
 	float: left;
 	left: 50%;
 	position: absolute;
-    margin-top: .2%;
+  margin-top: .2%;
 	margin-left: -260px;
-    -moz-border-radius: 7px;
-    -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
 }
 
 .feedback-input {
-	color: #36393D;
+	color: $bluegray;
 	font-family: Helvetica, Arial, sans-serif;
-  	font-weight:500;
+  font-weight:500;
 	font-size: 18px;
 	border-radius: 0;
 	line-height: 22px;
@@ -361,13 +331,13 @@ input[type="range"] {
 	box-sizing: border-box;
   border: 3px solid rgba(0,0,0,0);
 
-  &:focus{
-	background: #fff;
-	box-shadow: 0;
-	border: 3px solid #3498db;
-	color: #36393D;
-	outline: none;
-  padding: 13px 13px 13px 5px;
+  &:focus {
+		background: white;
+		box-shadow: 0;
+		border: 3px solid #3498db;
+		color: $bluegray;
+		outline: none;
+	  padding: 13px 13px 13px 5px;
 	}
 }
 
@@ -389,8 +359,8 @@ input[type="range"] {
 	width: 100%;
 	border: #fbfbfb solid 4px;
 	cursor:pointer;
-	background-color: #36393D;
-	color:#FFFFFF;
+	background-color: $bluegray;
+	color: white;
 	font-size:24px;
 	padding-top:22px;
 	padding-bottom:22px;
@@ -425,17 +395,6 @@ input[type="range"] {
   width:100%;
   background-color: white;
 }
-
-// @media only screen and (max-width: 580px) {
-// 	#form-div{
-// 		left: 3%;
-// 		margin-right: 3%;
-// 		width: 88%;
-// 		margin-left: 0;
-// 		padding-left: 3%;
-// 		padding-right: 3%;
-// 	}
-// }
 
 .facebooklogin {
 	margin-top: 5%;
@@ -502,6 +461,7 @@ input[type="range"] {
 
 .star {
 	color: #FFCC11;
+	
 	&:hover {
 		color:#FCDC3B;
 		cursor: pointer;
@@ -533,7 +493,7 @@ input[type="range"] {
 	border: 0px;
 	border-radius: 0px;
 	box-shadow: 0;
-	min-width: 121px;
+	min-width: 125px;
 }
 
 .randombox {
@@ -589,7 +549,7 @@ input[type="range"] {
   @extend .error;
 }
 
-.controls{
+.controls {
 	display: block;
 	width: 100%;
 	margin-left: -50px;
@@ -629,7 +589,24 @@ hr {
 	font-size: 0.1px;
 	padding-left: 0;
 
-	.mix{
+	.gap {
+		display: inline-block;
+		width: 20px;
+	 }
+
+	.favorite {
+
+		.fa-star {
+			color: #FFCC11;
+	
+			&:hover {
+				color:#FCDC3B;
+				cursor: pointer;
+			}
+		}
+	}
+
+	.mix {
 		display: none;
 		opacity: 0;
 		width: 100%;
@@ -643,9 +620,7 @@ hr {
 		padding-top: 17px;
 		padding-bottom: 17px;
 		border-bottom: 1px solid #E8E8E8 ;
-		-webkit-transition: all 200ms ease;
-	  -moz-transition: all 200ms ease;
-	  -o-transition: all 200ms ease;
+		@extend %webkit_easing;
 	  -webkit-font-smoothing: antialiased;
 
 		.calorie-amount-per-item {
@@ -662,6 +637,27 @@ hr {
 			background-color: #e7e7e7;
 		}
 
+		&:after {
+		content: '';
+		display: inline;
+		width: 100%;
+	  }
+
+	  &:hover .under {
+			display: inline;
+			cursor: default;
+		}
+
+		&:hover .default {
+			display: none;
+		}
+		
+		.restaurant-name {
+			font-size: 15px;
+			color: gray;
+			padding-left: 5px;
+		}
+
 		.under {
 			display: none;
 			width: 100%;
@@ -674,7 +670,6 @@ hr {
 
 			.right-links {
 				border: 3px solid white;
-				// border-radius:10px;
 				padding: 5px 10px;
 				margin-right: 15px;
 				margin-left: 5px;
@@ -682,20 +677,9 @@ hr {
 				&:hover {
 					background-color: white;
 					cursor: pointer;
-					-webkit-transition: all 200ms ease;
-	  			-moz-transition: all 200ms ease;
-	  			-o-transition: all 200ms ease;
+					@extend %webkit_easing;
 				}
 			}
-		}
-
-		&:hover .under {
-			display: inline;
-			cursor: default;
-		}
-
-		&:hover .default {
-			display: none;
 		}
 
 		.default, .under {
@@ -711,26 +695,15 @@ hr {
 					border-left: 1px solid gray;
 					padding-left: 10px;
 					padding-right: 10px;
+
+					&:first-child {
+						border-left: none;
+						padding-left: 0px;
+						padding-right: 0px;
+					}
 				}
 			}
 		}
-
-		.restaurant-name {
-			font-size: 15px;
-			color: gray;
-			padding-left: 5px;
-		}
-	}	
-
-	.gap {
-		display: inline-block;
-		width: 20px;
-	}
-
-	&:after{
-		content: '';
-		display: inline;
-		width: 100%;
 	}
 }
 
@@ -743,25 +716,12 @@ hr {
 	font-size: 7px;
 }
 
-.fa-angle-double-right {
-	padding-left: 15px;
-	font-size: 16px;
-}
+// .fa-angle-double-right {
+// 	padding-left: 15px;
+// 	font-size: 16px;
+// }
 
-.menu-item-info {
-	//uncomment below once the detail looks/is positioned correct(ly)
-	//display: none;
-	height: 10px;
-	width: 10px;
-	background-color: blue;
-}
-
-.map-canvas {
-	height: 300px;
-	width: 300px;
-}
-
-.profile {
+.profile-top-section {
 	width: 100%;
 	height: 150px;
 	background-color: #444;
@@ -780,7 +740,33 @@ hr {
 		width: 150px;
 		border: 3px solid white;
 		left: 50%;
-		position: fixed;
+		position: absolute;
 		margin-left: -75px;
+	}
+
+	button {
+		padding: 0;
+		border: 0;
+		float: right;
+	}
+
+	.edit-profile-button {
+		@extend %button;
+		width: 150px;
+	}
+}
+
+.profile-favorites-section {
+	width: 100%;
+
+	.favorite-items-header {
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+		margin-top: 150px;
+		text-align: center;
+	}
+
+	.favorite-items-list {
+		text-align: center;
 	}
 }

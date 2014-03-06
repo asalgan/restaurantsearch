@@ -1,9 +1,31 @@
-<div class="profile">
-	<div class="container">
-		<h1 class="profile-header">Hi <%= @user.name.capitalize %></h1>
-		<p><%= gravatar_for @user %></p>
-		<p><%= @user.email %></p>
-		<p><%= link_to "Edit profile", edit_user_url(current_user) %></p>
-		<p>You haven't added any favorites yet. <%= link_to "Add some now", root_url %></p>
+<div class="profile-page">
+	<div class="profile-top-section">
+		<div class="container">
+			<h1 class="profile-header">Hi <%= @user.name.capitalize %></h1>
+			<p><%= gravatar_for @user %></p>
+			<p>
+				<button><%= link_to "Edit profile", edit_user_url(current_user), class: "btn btn-primary btn-lg edit-profile-button" %></button>
+			</p>
+		</div>
 	</div>
+
+	<div class="profile-favorites-section">
+		<div class="container">
+		<h2 class="favorite-items-header">My favorite items</h2>
+
+		<% if @favorite.empty? %>
+		<p class="favorite-items-list">You haven't added any favorites yet. Let's <%= link_to "add some now", root_url %></p>
+
+
+		<% else %>
+
+			<ul>
+				<% @favorite.each do |favorite_item| %>
+					<% food_item = Menu.find_by(:id => favorite_item.menu_id) %>
+					<li><%= food_item.item %></li>
+				<% end %>
+			</ul>
+		<% end %>
+	</div>
+</div>
 </div>

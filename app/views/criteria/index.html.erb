@@ -28,11 +28,11 @@
 							<option><%= category.name %></option>
 						<% end %>
 			    </select>
-			    	<p class="buttonsubmit">
+			    	<p>
 					 		<button type="submit" class="btn btn-primary btn-lg homepagebutton">Search</button>
 						</p>
 					<% if signed_in? %>
-						<p class="navlinkshome"><%= link_to "Sign Out", signout_path, method: "delete" %></p>
+						<p class="navlinkshome"><%= link_to 'My Profile', current_user %> | <%= link_to "Sign Out", signout_path, method: "delete" %></p>
 					<% else %>
 						<p class="navlinkshome"><%= link_to 'Sign In', signin_path %> | <%= link_to ' Register', '/users/new' %></p>
 					<% end %>
