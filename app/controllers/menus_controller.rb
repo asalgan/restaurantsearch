@@ -1,19 +1,18 @@
 class MenusController < ApplicationController
 
   def index
-   @menus = Menu.where("calories <= '#{params[:calories]}' AND category = '#{params[:category]}' ").sample(300).sort
-   # @random = @menus.sample
-   @categories = Category.all
+    @menus = Menu.where("calories <= '#{params[:calories]}' AND category = '#{params[:category]}' ").sample(300).sort
+    # @random = @menus.sample
+    @categories = Category.all
 
-   user = current_user
-   @favorite = Favorite.where(:user_id => user.id)
-
+    if signed_in?
+      @favorite = Favorite.where(:user_id => current_user.id).count
+    end
    
    # @restaurants = @menus.group_by(&:restaurant).map{|k, v| v.first}
    # @restaurants = @menus.each {:restaurant}.uniq
    # @items = @menus.find_all{ |restaurant| @menus.collect.restaurant == restaurant }
    # @restaurants = Menu.where("calories <= '#{params[:calories]}' AND category = '#{params[:category]}' ").group_by(&:restaurant).map{|k, v| v.first}
-  
   end
 
   def show
