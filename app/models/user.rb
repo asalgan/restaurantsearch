@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 	has_many :favorites, :class_name => "Favorite", :foreign_key => :menu_id
-  has_many :menus, :through => :favorites
+  has_many :menus, through: :favorites
   
 	
 	before_save { self.email = email.downcase }

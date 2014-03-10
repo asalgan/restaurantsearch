@@ -20,7 +20,9 @@ $(document).ready(function() {
 
   $('.selectpicker').selectpicker();
 
-  $('#Grid .fa-star').click(function() {
+  $('.fa-star').click(function(event) {
+    event.preventDefault();
+    $(this).closest(".mix").toggleClass("favorite");
     var mix = $(this).closest(".mix");
     var food_id = mix.attr("id");
     $.ajax({
@@ -30,11 +32,15 @@ $(document).ready(function() {
         menu_id: food_id
       },
       success: function (data) {
-        console.log('yay');
-        // mix.addClass('favorite');
       }
     });
   });
+
+  // $('.showonly').click(function(event) {
+    // event.preventDefault();
+    // $(this).toggleClass('active');
+    // $('li.mix').not('.favorite').hide();
+  // });
     
 
   $('#Grid').mixitup();
@@ -46,6 +52,16 @@ $(document).ready(function() {
    country: 'us' // Option 1: Call on element.
 	 // map: ".map-canvas" // Option 2: Pass element as argument.
   }); 
+
+  var favorites = $('.profile-button-nav');
+    var favoritesTop = favorites.offset().top;
+    var favoritesLeft = favorites.offset().left;
+    $(window).scroll(function() {
+        var makeItStick = favoritesTop < $(window).scrollTop();
+        favorites.toggleClass('stuck', makeItStick);
+        favorites.css(makeItStick ? favoritesLeft : 0);
+    });
+
 });
 
 
