@@ -59,7 +59,7 @@ $(document).ready(function() {
     $(window).scroll(function() {
         var makeItStick = favoritesTop < $(window).scrollTop();
         favorites.toggleClass('stuck', makeItStick);
-        favorites.css(makeItStick ? favoritesLeft : 0);
+        favorites.css('center', makeItStick ? favoritesLeft : 0);
     });
 
 });
