@@ -25,7 +25,7 @@
 			<% @menus.each do |food| %>
 				<li class="mix" id="<%=food.id%>">
 					<ol class="default">
-						<li><i class="fa fa-star"></i></li>
+						<li><i class="fa fa-star favorite"></i></li>
 						<li><span class="calorie-amount-per-item"><%= food.calories %></span></li>
 						<li><span class="food-item"><%= food.item %></span></li>
 						<li><span class="restaurant-name"><%= food.restaurant %></span></li>
@@ -34,7 +34,7 @@
 					<div class="under">
 						<div class="left">
 							<ol>
-								<li><i class="fa fa-star"></i></li>
+								<li><i class="fa fa-star favorite"></i></li>
 								<li><%= food.item %></li>
 								<li>
 									<% if food.calories >= 667 %>
