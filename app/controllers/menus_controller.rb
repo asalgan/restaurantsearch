@@ -52,4 +52,15 @@ class MenusController < ApplicationController
     redirect_to menus_url
   end
 
+  # def update_favorites
+  #   user = current_user
+  #   favorite = Favorite.where(:user_id => user.id).count
+  #   favorite.save
+  #     respond_to do |format|
+  #       format.js do
+  #         render :nothing => true
+  #       end
+  #     end
+  #   end
+  # end
 end

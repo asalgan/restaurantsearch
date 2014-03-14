@@ -136,6 +136,30 @@ li {
     padding: 5px 0px 2px 0px;
     @extend %webkit_easing;
 
+    .view-profile-button, .create-profile-button {
+    	border-radius: 0px;
+			background-color: $teal;
+			border: 2px solid white;
+			font-family: 'Lato', sans-serif;
+			font-weight: 300;
+			text-decoration: none;
+			@extend %webkit_easing;
+			@extend %button;
+			width: 230px;
+			margin: 0 auto;
+			display: block;
+
+			a {
+				color: white;
+				text-decoration: none;
+				padding: 20px 0px;
+			}
+
+			&:hover {
+				background-color: darken($teal, 15%);
+			}
+    }
+
 		&.stuck {
       position: fixed;
       width: 100%;  
@@ -148,36 +172,10 @@ li {
 
 	    .view-profile-button, .create-profile-button {
 	    	border-radius: 0px;
-				background-color: $teal;
 				border: 2px solid white;
-				font-family: 'Lato', sans-serif;
-				font-weight: 300;
-				text-decoration: none;
-				@extend %webkit_easing;
 	    }
     }
-
-		.profile-button {
-			padding: 0;
-			border: 0;
-			display: block;
-			margin: 0 auto;
-		}
-
-		.view-profile-button, .create-profile-button {
-			@extend %button;
-			width: 230px;
-
-			&:hover {
-				background-color: darken($teal, 15%);
-				color: white;
-			}
-		}
 	}
-}
-
-.header-image {
-
 }
 
 .navbar {

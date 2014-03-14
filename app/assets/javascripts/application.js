@@ -32,6 +32,7 @@ $(document).ready(function() {
         menu_id: food_id
       },
       success: function (data) {
+        $('.favorite-counter').load(window.location + " .favorite-counter");
       }
     });
   });

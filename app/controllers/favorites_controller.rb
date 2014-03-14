@@ -16,22 +16,10 @@ class FavoritesController < ApplicationController
       f.user_id = current_user.id
       f.quantity += 1
 
-
-
     if f.save
     respond_to do |format|
       format.js do
           render :nothing => true
-
-        # else
-
-        #   m = Menu.find_by(:id => params[:menu_id])
-        #   f = Favorite.new
-        #   f.menu_id = m.id
-        #   f.user_id = current_user(params[:id])
-        #   f.quantity += 1
-        #   f.save
-        #   render :nothing => true
 
         end
       end

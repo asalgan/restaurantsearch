@@ -5,6 +5,7 @@ RestaurantSearch::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 
   post '/add_item_to_user' => 'favorites#add_item_to_user'
+  # post '/update_favorites' => 'menus#update_favorites'
 
 
   #Routes for logging in/out

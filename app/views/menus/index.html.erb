@@ -9,8 +9,9 @@
 	</div><!--end row-->
 	<div class="profile-button-nav">
 		<% if signed_in? %>
+
 			<p>
-				<button class="profile-button"><%= link_to "View my favorite items (#{@favorite})", user_url(current_user), class: "btn btn-primary btn-lg view-profile-button" %></button>
+				<button class="btn btn-primary btn-lg view-profile-button"><a href="<%=user_url(current_user)%>">View my favorite items (<span class="favorite-counter"><%="#{@favorite}"%></span>)</a></button>	
 			</p>
 		<% else %>
 			<p>

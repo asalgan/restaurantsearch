@@ -1,0 +1,500 @@
+    3  rails g migration add_parent_to_menu
+    4  rake db:migrate
+    5  rake db:migrate:redo VERSION = 20131112031038
+    6  rake db:migrate:redo VERSION=20131112031038
+    7  rake db:migrate:redo VERSION=20131112031038
+    8  rake db:seed
+    9  rake db:migrate:redo VERSION=20140116200344
+   10  rails generate migration add_index_to_users_email
+   11  rake db:migrate
+   12  rake db:migrate:redo VERSION=20140116200344
+   13  rails generate migration add_index_to_users_email
+   14  rake db:migrate
+   15  subl .
+   16  subl .
+   17  rake db:migrate
+   18  subl .
+   19  subl .
+   20  rake db:migrate:redo VERSION=20140222222548
+   21  subl .
+   22  subl .
+   23  rails console
+   24  cd projects
+   25  cd restaurantsearch
+   26  git add -A
+   27  git commit -m "modified search"
+   28  git push
+   29  cd ..
+   30  cd ..
+   31  vagrant box add precise32 http://files.vagrantup.com/precise32.box
+   32  cd ..
+   33  ls
+   34  cd alansalganik
+   35  cd code
+   36  git clone https://github.com/eng/jeffs-store.git
+   37  ls
+   38  cd jeffs-store
+   39  vagrant up precise32
+   40  git pull
+   41  vagrant ssh
+   42  cd ..
+   43  cd ..
+   44  cd code
+   45  ls
+   46  cd jeffs-store
+   47  git checkout mater
+   48  git checkout master
+   49  git pull origin master
+   50  vagrant box add provisioned https://dl.dropboxusercontent.com/u/1863351/StarterSchoolFeb2014/provisioned.box
+   51  cap -T
+   52  cap deploy:cold
+   53  scp ~/.ssh/id_rsa.pub deploy@192.168.33.10:/home/deploy
+   54  ssh deploy@192.168.33.10
+   55  ssh deploy@192.168.33.10
+   56  ssh deploy@192.168.33.10
+   57  ssh deploy@192.168.33.10
+   58  scp ~/.ssh/id_rsa.pub deploy@192.168.33.10:/home/deploy
+   59  ssh deploy@192.168.33.10
+   60  ssh deploy@192.168.33.10
+   61  cap deploy:cold
+   62  cap deploy:setup
+   63  cap deploy:cold
+   64  cd ..
+   65  cd ..
+   66  cd code
+   67  ls
+   68  cd jeffs-store
+   69  git checkout capistrano
+   70  git fetch capistrano
+   71  git branch -a
+   72  git checkout capistrano
+   73  git checkout capistrano
+   74  git fetch
+   75  git checkout capistrano
+   76  vagrant up provisioned
+   77  subl .
+   78  bundle install
+   79  vim config/deploy.rb
+   80  cd ..
+   81  cd ..
+   82  cd code
+   83  git clcone https://github.com/asalgan/Murray.git
+   84  git clone https://github.com/asalgan/Murray.git
+   85  cd murray
+   86  cd ..
+   87  cd .
+   88  cd ..
+   89  ls
+   90  cd projects
+   91  cd restaurantsearch
+   92  rails s
+   93  subl .
+   94  subl .
+   95  cd ..
+   96  ls
+   97  cd restaurantsearch
+   98  subl .
+   99  subl .
+  100  subl .
+  101  subl .
+  102  git add -A
+  103  git commit -m "added hover for list"
+  104  git push
+  105  git add -A
+  106  git commit -m "added color coding to calories fat carbs"
+  107  git push
+  108  rails g model restaurant
+  109  git add -A
+  110  git commit -m "started working on profile page"
+  111  git push
+  112  git add -A
+  113  git commit -m "small design changes"
+  114  git push
+  115  cd ..
+  116  cd ..
+  117  ls
+  118  cd code
+  119  ls
+  120  cd maps
+  121  git branch -A
+  122  git branch -a
+  123  git remote add upstream https://github.com/starterschool/Maps.git
+  124  git remote
+  125  git branch -a
+  126  git fetch upstream
+  127  git branch -a
+  128  git branch
+  129  git branch -a
+  130  git merge upstream/day2
+  131  git commit -m "commit"
+  132  git add -a
+  133  git add -A
+  134  git commit -m "commit"
+  135  git merge upstream/day2
+  136  git merge upstream/day2
+  137  git commit -a
+  138  git status
+  139  git log
+  140  git branch
+  141  git remote
+  142  git branch -a
+  143  git merge upstream/day2
+  144  git reset --hard
+  145  git diff
+  146  git log
+  147  git reset HEAD^
+  148  git diff
+  149  git log
+  150  git merge upstream/day2
+  151  git reset --hard
+  152  git merge upstream/day2
+  153  git status
+  154  git push
+  155  q 
+  156  subl .
+  157  open .
+  158  subl .
+  159  exit
+  160  ls
+  161  cd projects
+  162  cd restaurantsearch
+  163  rails s
+  164  rails 
+  165  rails s
+  166  cd code
+  167  ls
+  168  cd sample_app
+  169  rails s
+  170  rails generate model Micropost content:string user_id:integer
+  171  rm -f spec/factories/microposts.rb
+  172  rake db:migrate
+  173  rake test:prepare
+  174  bundle exec rspec spec/models/micropost_spec.rb
+  175  ls
+  176  cd projects
+  177  cd restaurantsearch
+  178  rails s
+  179  rails s
+  180  rails s
+  181  rails s
+  182  rails s
+  183  rails g migration menu_id:integer user_id:integer
+  184  rails g model Favorites
+  185  rails g migration Favorites
+  186  rake db:migrate
+  187  rake db:sed
+  188  rake db:seed
+  189  rake db:migrate:redo VERSION=20140303222424
+  190  RAKE DB:SED
+  191  rake db:seed
+  192  rake db:migrate:redo VERSION=20140303222424
+  193  rake db:migrate:redo VERSION=20140303222424
+  194  rake db:migrate:redo VERSION=20140303222424
+  195  rails c
+  196  rake routes
+  197  rails c
+  198  rails s
+  199  rails c
+  200  rails c
+  201  ls
+  202  cd code
+  203  cd jeffs-store
+  204  git pull
+  205  git checkout tdd_lab
+  206  rails s
+  207  bundle install
+  208  rake db:create
+  209  rake db:create
+  210  rake db:create
+  211  rake db:migrate
+  212  rake test:units
+  213  rake test:units
+  214  rake test:units
+  215  rake test:units
+  216  rake db:seed
+  217  git checkout rspec_lab
+  218  git stash
+  219  git checkout rspec_lab
+  220  rake test:units
+  221  bundle install
+  222  rake test:units
+  223  rake test:units
+  224  guard init
+  225  bundle exec guard
+  226  rspec/spec
+  227  rspec spec/products_controller_spec.rb
+  228  rspec spec/controllers/products_controller_spec.rb
+  229  rspec spec/controllers/products_controller_spec.rb
+  230  rspec spec/controllers/products_controller_spec.rb
+  231  rspec spec/controllers/products_controller_spec.rb
+  232  rspec spec/controllers/products_controller_spec.rb
+  233  rspec spec/controllers/products_controller_spec.rb
+  234  rspec spec/controllers/products_controller_spec.rb
+  235  rspec spec/controllers/products_controller_spec.rb
+  236  rspec spec/controllers/products_controller_spec.rb
+  237  rspec spec/controllers/products_controller_spec.rb
+  238  rspec spec/controllers/products_controller_spec.rb
+  239  rspec spec/controllers/products_controller_spec.rb
+  240  rspec spec/controllers/products_controller_spec.rb
+  241  rspec spec/controllers/products_controller_spec.rb
+  242  git stash
+  243  git branch
+  244  git checkout tdd_lab
+  245  rake db:drop
+  246  rake db:create
+  247  rake db:migrate
+  248  rake db:seed
+  249  rake test:units
+  250  rake test:units
+  251  rake test:units
+  252  rails s
+  253  rails c
+  254  ls
+  255  cd projects
+  256  cd restaurantsearch
+  257  rails s
+  258  rails s
+  259  cd ..
+  260  cd ..
+  261  ls
+  262  cd code
+  263  git clone https://github.com/starterschool/Family-Bands.git
+  264  cd family-bands
+  265  bundle install
+  266  subl .
+  267  cd ..
+  268  git clone git@github.com:srobbin/starter-school-poupon.git
+  269  git clone https://github.com/srobbin/starter-school-poupon.git
+  270  cd starter-school-poupon
+  271  bundle install
+  272  rake db:setup
+  273  rails s
+  274  rails c
+  275  cd ..
+  276  ls
+  277  cd wheretovacationquiz
+  278  git add -A
+  279  git commit -m "added viewport"
+  280  git push
+  281  git push heroku master
+  282  cd projects
+  283  cd restaurantsearch
+  284  rails s
+  285  rails s
+  286  rails c
+  287  git add -A
+  288  git commit -m "add favoriting feature"
+  289  git push
+  290  git push heroku master
+  291  heroku run rake db:migrate
+  292  heroku run rake db:seed
+  293  /Users/alansalganik/Downloads/ngrok ; exit;
+  294  /Users/alansalganik/Downloads/ngrok ; exit;
+  295  /Users/alansalganik/Downloads/ngrok ; exit;
+  296  cd desktop
+  297  mv ~/desktop/ngrok /usr/local/bin/
+  298  cd downloads
+  299  ls
+  300  cd ..
+  301  ls
+  302  cd downloads
+  303  mv ~/downloads/ngrok /usr/local/bin/
+  304  cd ..
+  305  cd ..
+  306  ls
+  307  cd alansalganik
+  308  ls
+  309  mv ~/downloads/ngrok /usr/local/bin/
+  310  mv ~/Downloads/ngrok /usr/local/bin/
+  311  sudo mv ~/Downloads/ngrok /usr/local/bin/
+  312  cocomonkey981
+  313  which ngrok
+  314  ngrok 3000
+  315  rake routes
+  316  git add -a
+  317  git add -A
+  318  git commit -m "added footer"
+  319  git push
+  320  cd ..
+  321  cd ..
+  322  cd code
+  323  ls
+  324  rails c
+  325  cd  ..
+  326  cd ..
+  327  ls
+  328  cd ..
+  329  cd home
+  330  ls
+  331  cd ..
+  332  ls
+  333  cd users
+  334  ls
+  335  cd alansalganik
+  336  ls
+  337  cd projects
+  338  ls
+  339  cd restaurantsearch
+  340  rails s
+  341  subl .bash_profile
+  342  cd ..
+  343  cd ..
+  344  cd ..
+  345  cd ..
+  346  subl .bash_profile
+  347  ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/.rvm/bin/subl
+  348  sudo ln -s /Applications/Sublime\ Text \2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+  349  cd
+  350  sudo ln -s /Applications/Sublime\ Text \2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+  351  sudo ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/bin/subl
+  352  subl .
+  353  ls
+  354  cd projects
+  355  ls
+  356  cd restaurantsearch
+  357  subl .
+  358  rails c
+  359  ls
+  360  cd projects
+  361  ls
+  362  cd restaurantsearch
+  363  rails s
+  364  cd code
+  365  cd sample-app
+  366  cd sample_app
+  367  guard
+  368  ls
+  369  cd projects
+  370  ls
+  371  cd ..
+  372  l
+  373  ;s
+  374  ls
+  375  cd code
+  376  ls
+  377  cd sample_app
+  378  subl .
+  379  rails s
+  380  rspec spec/models
+  381  ls
+  382  cd projects
+  383  cd restaurantsearch
+  384  subl .
+  385  rails s
+  386  git add -A
+  387  git commit -m "add sticky nav"
+  388  git push
+  389  rails c
+  390  ls
+  391  cd code
+  392  ks
+  393  ls
+  394  cd sample_app
+  395  rails s
+  396  rails s
+  397  ls
+  398  cd code
+  399  cd sample_app
+  400  subl .
+  401  bundle exec rspec spec/
+  402  bundle exec rspec spec/
+  403  bundle exec rspec spec/
+  404  bundle exec rspec spec/
+  405  bundle exec rspec spec/
+  406  bundle exec rspec spec/
+  407  bundle exec rspec spec/
+  408  bundle exec rspec spec/
+  409  bundle exec rspec spec/
+  410  bundle exec rspec spec/
+  411  bundle exec rspec spec/
+  412  bundle install
+  413  bundle exec rspec spec/
+  414  bundle exec rspec spec/
+  415  bundle exec rspec spec/
+  416  bundle exec rspec spec/
+  417  bundle exec rspec spec/
+  418  bundle exec rspec spec/
+  419  bundle exec rspec spec/
+  420  bundle exec rspec spec/
+  421  bundle exec rspec spec/
+  422  bundle exec rspec spec/
+  423  bundle update
+  424  bundle exec rspec spec/
+  425  bundle exec rspec spec/
+  426  subl .
+  427  subl .
+  428  bundle exec rspec spec/
+  429  bundle exec rspec spec/
+  430  bundle exec rspec spec/
+  431  bundle exec rspec spec/
+  432  bundle exec rspec spec/
+  433  bundle exec rspec spec/
+  434  bundle exec rspec spec/
+  435  bundle exec rspec spec/
+  436  bundle exec rspec spec/
+  437  bundle exec rspec spec/
+  438  bundle exec rspec spec/
+  439  ls
+  440  cd projects
+  441  ls
+  442  cd restaurantsearch
+  443  subl .
+  444  rails s
+  445  ls
+  446  cd projects
+  447  cd movies_app
+  448  cd movie_app
+  449  rails s
+  450  subl .
+  451  subl .
+  452  subl .
+  453  subl .
+  454  subl .
+  455  subl .
+  456  ls
+  457  cd projects
+  458  cd restaurantsearch
+  459  subl .
+  460  rails c
+  461  rails c
+  462  rails c
+  463  rails c
+  464  rails s
+  465  cd ..
+  466  cd ..
+  467  cd code
+  468  git clone https://github.com/asalgan/regex.git
+  469  cd regex
+  470  subl .
+  471  rails s
+  472  bundle install
+  473  rails s
+  474  git stash
+  475  git stash
+  476  git pull
+  477  git branch
+  478  git branch regex 
+  479  git branch
+  480  git status
+  481  git checkout regex
+  482  git status
+  483  git add -A
+  484  git commit -m "changes"
+  485  git push
+  486  git push regex
+  487  git config --global.default matching
+  488  subl .
+  489  subl .
+  490  subl .
+  491  ./ngrok
+  492  /ngrok
+  493  cd ..
+  494  cd ..
+  495  ./ngrok
+  496  /ngrok
+  497  ngrok
+  498  localhost:3000 ngrok
+  499  ngrok localhost:3000
+  500  ngrok localhost:3000
+  501  history
+  502  history > alan.txt
