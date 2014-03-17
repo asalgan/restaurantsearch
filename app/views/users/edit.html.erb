@@ -1,24 +1,23 @@
 <div class="container">
-<h1>Update profile</h1>
+  <div class="col-md-6 col-md-offset-3", id ="form-div">
+    <h1>Update profile</h1>
+    <%= form_for(@user) do |f| %>
 
+    <div>
+      <%= f.label :name, "Name" %><br />
+      <%= f.text_field :name, class: 'feedback-input form-control' %>
+    </div>
 
-<%= form_tag(user_url(@user), method: 'patch') do %>
-
-  <div>
-    <%= label_tag :name %><br />
-    <%= text_field_tag :name, @user.name %>
-  </div>
-
-  <div>
-    <%= label_tag :email %><br />
-    <%= text_field_tag :email, @user.email %>
-  </div>
-
+    <div>
+      <%= f.label :email %><br />
+      <%= f.text_field :email, class: 'feedback-input form-control' %>
+    </div>
   
-  <div>
-    <%= submit_tag "Update User" %>
+    <div class="submit">
+      <%= f.submit "Update User", class: "feedback-input button-blue btn btn-default" %>
+      <div class="ease"></div>
+    </div>
+
+    <% end %>
   </div>
-
-<% end %>
-
 </div>

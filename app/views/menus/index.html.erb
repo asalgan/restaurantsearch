@@ -11,11 +11,11 @@
 		<% if signed_in? %>
 
 			<p>
-				<button class="btn btn-primary btn-lg view-profile-button"><a href="<%=user_url(current_user)%>">View my favorite items (<span class="favorite-counter"><%="#{@favorite}"%></span>)</a></button>	
+				<button class="btn btn-primary btn-lg view-profile-button"><a href="<%= user_url(current_user) %>">View my favorite items (<span class="favorite-counter"><%="#{@favorite}"%></span>)</a></button>	
 			</p>
 		<% else %>
 			<p>
-				<button class="profile-button"><%= link_to "Sign in to save favorites", signin_url, class: "btn btn-primary btn-lg create-profile-button" %></button>
+				<button class="btn btn-primary btn-lg create-profile-button"><a href="<%= signin_url %>">Sign in to save favorites</a></button>	
 			</p>
 		<% end %>
 	</div>

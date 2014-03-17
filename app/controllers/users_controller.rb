@@ -16,14 +16,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       sign_in @user
-      redirect_to @user
+      redirect_to root_url
     else
       render 'new'
     end
-
-    # if user.signed_in?
-    #   redirect_to root_url
-    # end
   end
 
   def show
@@ -40,7 +36,6 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated"
       redirect_to @user
     else
       render 'edit'
@@ -49,14 +44,13 @@ class UsersController < ApplicationController
 
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "User deleted."
     redirect_to users_url
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation) 
   end
 
    #Before filters
