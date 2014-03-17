@@ -15,3 +15,5 @@
 /log/*.log
 /tmp
 email.yml
+# Ignore application configuration
+/config/application.yml

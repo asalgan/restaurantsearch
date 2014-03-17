@@ -1,7 +1,7 @@
 <div class="profile-page">
 	<div class="profile-top-section">
 		<div class="container">
-			<h1 class="profile-header">Hi <%= @user.name.capitalize %></h1>
+			<h1 class="profile-header">Hi <%= @user.name.capitalize.gsub(/\s.+/, '') %></h1>
 			<p><%= gravatar_for @user %></p>
 			<p>
 				<button><%= link_to "Edit profile", edit_user_url(current_user), class: "btn btn-primary btn-lg edit-profile-button" %></button>
@@ -11,7 +11,7 @@
 
 	<div class="profile-favorites-section">
 		<div class="container">
-		<h2 class="favorite-items-header">My favorite items</h2>
+		<h2 class="favorite-items-header"><i class="fa fa-star"></i> My favorite items</h2>
 
 		<% if @favorite.empty? %>
 		<p class="favorite-items-list"><b>You haven't added any favorites yet.</b> Let's <%= link_to "add some now", root_url %></p>

@@ -72,7 +72,6 @@ Category.create(name: "Vegetarian")
       @menu = Menu.create(:item => item,:calories => calories,:fat => fat,
               :carbs => carbs,:category => category,:restaurant => restaurant)
   end
-
 end
 
   #   def fetch_restaurants
@@ -82,6 +81,5 @@ end
   #     name = ex.cell(line,'A')
   #     @restaurant = Restaurant.create(:name => name)
   # end
-
-
+  
   fetch_excel_data

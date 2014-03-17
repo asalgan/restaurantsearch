@@ -6,8 +6,11 @@ class MenusController < ApplicationController
     @categories = Category.all
 
     if signed_in?
-      @favorite = Favorite.where(:user_id => current_user.id).count
+      @favorites = Favorite.where(:user_id => current_user.id).count
     end
+
+    @favorite = Favorite.where(:user_id => current_user).pluck(:menu_id)
+    @m = Menu.find_by(:id => params[:menu_id])
    
    # @restaurants = @menus.group_by(&:restaurant).map{|k, v| v.first}
    # @restaurants = @menus.each {:restaurant}.uniq

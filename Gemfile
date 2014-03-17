@@ -14,11 +14,13 @@ gem 'rails', '4.0.2'
 
 gem 'omniauth-twitter'
 
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', '1.4.0'
 
 gem 'bootstrap-sass', '2.3.2.0'
 
 gem 'geocoder'
+
+gem 'figaro'
 
 # Use sqlite3 as the database for Active Record
 group :development do

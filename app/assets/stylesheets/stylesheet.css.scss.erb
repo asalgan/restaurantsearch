@@ -194,9 +194,13 @@ li {
 
 	a {
 		color: white;
+		text-decoration: none;
+		padding-bottom: 2px;
 
 		&:hover {
 			color: $teal;
+			border-bottom: 1px solid $teal;
+
 		}
 	}
 }
@@ -487,34 +491,23 @@ input[type="range"] {
 	}
 }
 
-.fa-star {
+.regular {
 	color: #909090;
-	margin-left: 5px;
-	margin-right: 5px;
-	padding:5px;
-	font-size: 16px;
-	padding-right: 4px;
-	-webkit-transition: all 100ms ease;
-	-moz-transition: all 100ms ease;
-	-o-transition: all 100ms ease;
 
 	&:hover {
 		color: #C0C0C0;
-		cursor: pointer;
 	}
 }
 
 .favorite {
+	color: #FFCC11;
 
-	.fa-star {
-		color: #FFCC11;
-
-		&:hover {
-			color:#FCDC3B;
-			cursor: pointer;
-		}
+	&:hover {
+		color:#FCDC3B;
+		cursor: pointer;
 	}
 }
+
 
 .dropdown {
 	height: 50px;
@@ -663,6 +656,21 @@ hr {
 			display: none;
 	  }
 
+		.fa-star {
+			margin-left: 5px;
+			margin-right: 5px;
+			padding:5px;
+			font-size: 16px;
+			padding-right: 4px;
+			-webkit-transition: all 100ms ease;
+			-moz-transition: all 100ms ease;
+			-o-transition: all 100ms ease;
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+
 		.calorie-amount-per-item {
 			color: #787878 ;
 			font-size: 16px;
@@ -806,6 +814,12 @@ hr {
 		text-align: center;
 	}
 
+	.fa-star {
+		font-size: 25px;
+		padding: 5px;
+		color: $teal;
+	}
+
 	.favorite-items-list {
 		text-align: center;
 		color: #606060;
@@ -917,39 +931,3 @@ hr {
 		}
 	}
 }
-
-// .actions {
-//   position: relative;
-//   top: 32px;
-//   right: 0;
-
-//   li {
-//     display: inline-block;
-//   }
-
-//   a {
-//     font-size: 18px;
-//     color: #693416;
-//     border: 1px solid #ddd;
-//     border-radius: 24px;
-//     display: inline-block;
-//     padding: 10px 20px;
-//     position: relative;
-//     margin-left: 10px;
-//     text-decoration: none;
-// 		&:hover {
-// 			background:#693416;
-//       color: white;
-// 		}
-
-//     &.active {
-//       background:#693416;
-//       color: white;
-
-//       span {
-//       	color: yellow;
-//       }
-
-//     }
-//   }
-// }
