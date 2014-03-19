@@ -355,16 +355,24 @@ input[type="range"] {
   -webkit-border-radius: 7px;
 }
 
+#email{
+	background-size: 30px 30px;
+	background-position: 11px 8px;
+	background-repeat: no-repeat;
+
+	&:focus{
+		background-size: 30px 30px;
+	  background-position: 11px 8px;
+		background-repeat: no-repeat;
+	}
+}
+
 .feedback-input {
 	color: $bluegray;
-	font-family: Helvetica, Arial, sans-serif;
-  font-weight:500;
-	font-size: 18px;
 	border-radius: 0;
 	line-height: 22px;
 	background-color: #fbfbfb;
 	padding: 13px 13px 13px 5px;
-	margin-bottom: 10px;
 	width:100%;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -378,28 +386,17 @@ input[type="range"] {
 		border: 3px solid #3498db;
 		color: $bluegray;
 		outline: none;
-	  padding: 13px 13px 13px 5px;
-	}
-}
-
-#email{
-	background-size: 30px 30px;
-	background-position: 11px 8px;
-	background-repeat: no-repeat;
-
-	&:focus{
-		background-size: 30px 30px;
-	  background-position: 11px 8px;
-		background-repeat: no-repeat;
+	  // padding: 13px 13px 13px 5px;
 	}
 }
 
 .button-blue{
-	font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+	font-family: 'Lato', sans-serif;
+	font-weight: 100;
 	float:left;
 	width: 100%;
 	border: #fbfbfb solid 4px;
-	cursor:pointer;
+	cursor: pointer;
 	background-color: $bluegray;
 	color: white;
 	font-size:24px;
@@ -408,7 +405,6 @@ input[type="range"] {
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
-  margin-top:-4px;
   font-weight:700;
 
   &:hover{
@@ -423,7 +419,7 @@ input[type="range"] {
 
 .ease {
 	width: 0px;
-	height: 66px;
+	height: 74px;
 	background-color: #fbfbfb;
 	-webkit-transition: .3s ease;
 	-moz-transition: .3s ease;
@@ -492,10 +488,10 @@ input[type="range"] {
 }
 
 .regular {
-	color: #909090;
+	color: #D0D0D0;
 
 	&:hover {
-		color: #C0C0C0;
+		color: #C8C8C8;
 	}
 }
 
@@ -618,10 +614,14 @@ hr {
 }
 
 .red-explanation {
-	padding-top: 100px;
+	padding-top: 50px;
 	font-size: 13px;
 	color: gray;
 	-webkit-font-smoothing: antialiased;
+
+	span {
+		color: red;
+	}
 }
 
 #Grid {
