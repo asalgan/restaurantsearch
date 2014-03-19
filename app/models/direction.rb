@@ -37,5 +37,4 @@ class Direction < ActiveRecord::Base
   end
 
 end
-end
 

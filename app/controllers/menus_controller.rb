@@ -7,6 +7,8 @@ class MenusController < ApplicationController
 
     if signed_in?
       @favorites = Favorite.where(:user_id => current_user.id).count
+    else
+      nil
     end
 
     @favorite = Favorite.where(:user_id => current_user).pluck(:menu_id)
