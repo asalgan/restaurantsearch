@@ -1,8 +1,7 @@
 class MenusController < ApplicationController
 
   def index
-    @menus = Menu.get_by_location(params[:zip])
-    #.where("calories <= '#{params[:calories]}' AND category = '#{params[:category]}' ").sample(300).sort
+    @menus = Menu.get_by_location(params[:zip]) & Menu.where("calories <= '#{params[:calories]}' AND category = '#{params[:category]}' ").sample(300).sort
     # @random = @menus.sample
     @categories = Category.all
 

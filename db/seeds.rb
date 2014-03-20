@@ -60,15 +60,13 @@ Category.create(name: "Vegetarian")
   def fetch_excel_data
       ex = Roo::Excel.new("public/fooditems.xls")
       ex.default_sheet = ex.sheets[0] #Mention the sheet number
-      2.upto(1961) do |line| #start and end of row
+      2.upto(4493) do |line| #start and end of row
       item = ex.cell(line,'A')
       calories = ex.cell(line,'B')
       fat = ex.cell(line,'C')
       carbs = ex.cell(line,'D')
       category = ex.cell(line,'E')
       restaurant = ex.cell(line,'F')
-      # category_id = ex.cell(line,'F')
-      # restaurant = ex.cell(line,'F')
       @menu = Menu.create(:item => item,:calories => calories,:fat => fat,
               :carbs => carbs,:category => category,:restaurant => restaurant)
   end
