@@ -59,10 +59,10 @@
 									<% end %>
 								</li>
 							  <li>
-							  	<% if food.carbs >= 100 %>
-							  		<span class="over-dv">* <%= food.carbs %>g carbs</span>
+							  	<% if food.try(:carbs).to_i >= 100 %>
+							  		<span class="over-dv">* <%= food.try(:carbs).to_i %>g carbs</span>
 							  	<% else %>
-							  		<span><%= food.carbs %>g carbs</span>
+							  		<span><%= food.try(:carbs).to_i %>g carbs</span>
 							  	<% end %>
 							  </li>
 							</ol>
