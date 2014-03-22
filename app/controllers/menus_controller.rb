@@ -12,8 +12,8 @@ class MenusController < ApplicationController
     end
 
     @favorite = Favorite.where(:user_id => current_user).pluck(:menu_id)
-    @m = Menu.find_by(:id => params[:menu_id])
-   
+
+    # @m = Menu.find_by(:id => params[:menu_id])
    # @restaurants = @menus.group_by(&:restaurant).map{|k, v| v.first}
    # @restaurants = @menus.each {:restaurant}.uniq
    # @items = @menus.find_all{ |restaurant| @menus.collect.restaurant == restaurant }

@@ -24,16 +24,18 @@ class Menu < ActiveRecord::Base
 
   start_cords = [start_lat, start_long]
 	
-  restaurant_location_hash = turn_url_into_hash("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{start_lat},#{start_long}&key=AIzaSyD61SLiTtkrATEA07q7r60XZEpBHXoz5fg&sensor=false&radius=1000&types=restaurant|bakery|cafe|food|meal_delivery|meal_takeaway")
+  restaurant_location_hash = turn_url_into_hash("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{start_lat},#{start_long}&key=AIzaSyD61SLiTtkrATEA07q7r60XZEpBHXoz5fg&sensor=false&radius=200&types=restaurant|bakery|cafe|food|meal_delivery|meal_takeaway")
   restaurants = restaurant_location_hash["results"]
-
+  
   menus = []
+
   restaurants.each do |restaurant|
   	menus << Menu.where(:restaurant => restaurant["name"])
+    #binding.pry
   end
   return menus.flatten.compact
 
-  #binding.pry
+  
 
   # hash = turn_url_into_hash("http://maps.googleapis.com/maps/api/geocode/json?address=#{self.finish}&sensor=false")
 
