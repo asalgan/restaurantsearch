@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	has_many :favorites, :class_name => "Favorite", :foreign_key => :menu_id
+	has_many :favorites, :class_name => "Favorite", :foreign_key => :menu_id, dependent: :destroy
   has_many :menus, through: :favorites
   
 	

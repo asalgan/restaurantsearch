@@ -1,0 +1,57 @@
+<ul id="Grid" style="   ">
+	<% @menus.each do |food| %>
+		<li class="mix" id="<%= food.id %>">
+			<ol class="default">
+				<% if @favorite.include?(food.id) %>
+				<li><i class="fa fa-star favorite"></i></li>
+				<% else %>
+				<li><i class="fa fa-star regular"></i></li>
+				<% end %>
+				<li><span class="calorie-amount-per-item"><%= food.calories %></span></li>
+				<li><span class="food-item"><%= food.item %></span></li>
+				<li><span class="restaurant-name"><%= food.restaurant %></span></li>
+					<!-- i class="fa fa-angle-double-right"></i> -->
+			</ol>
+			<div class="under">
+				<div class="left">
+					<ol>
+						<% if @favorite.include?(food.id) %>
+						<li><i class="fa fa-star favorite"></i></li>
+						<% else %>
+						<li><i class="fa fa-star regular"></i></li>
+						<% end %>
+						<li><%= food.item %></li>
+						<li>
+							<% if food.calories >= 667 %>
+								<span class="over-dv">* <%= food.calories %> calories</span>
+							<% else %>
+								<span><%= food.calories %> calories</span>
+							<% end %>
+						</li>
+						<li>
+							<% if food.fat >= 21.7 %>
+								<span class="over-dv">* <%= food.fat %>g fat</span>
+							<% else %>
+								<span><%= food.fat %>g fat</span>
+							<% end %>
+						</li>
+					  <li>
+					  	<% if food.try(:carbs).to_i >= 100 %>
+					  		<span class="over-dv">* <%= food.try(:carbs).to_i %>g carbs</span>
+					  	<% else %>
+					  		<span><%= food.try(:carbs).to_i %>g carbs</span>
+					  	<% end %>
+					  </li>
+					</ol>
+				</div>
+				<div class="right">
+					<ol>
+						<li>
+							 0.67 miles away  <i class="fa fa-location-arrow right-links"></i>
+						</li>
+					</ol>
+				</div>
+			</div>
+		</li>
+	<% end %>
+</ul>

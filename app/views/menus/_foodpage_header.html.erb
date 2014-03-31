@@ -1,8 +1,8 @@
 <p class="paramslist" class="col-md-6">We found <span id="foodpagecategory">
-			<select class="selectpicker" name="category" >
-				<option value="<%= params[:category].capitalize %>"><%= params[:category].capitalize %></option>
-				<% @categories.each do |category| %>
-				<option><%= category.name %></option>
-				<% end %>
-			</select>
-			</span> with <span id="foodpagecalories"><%= params[:calories] %></span>
+	<select class="selectpicker" name="category" >
+		<option value="<%= params[:category].capitalize %>"><%= params[:category].capitalize %></option>
+		<% @categories.each do |category| %>
+		<option><%= category.name %></option>
+		<% end %>
+	</select>
+	</span> with <span id="foodpagecalories"><%= params[:calories] %></span>

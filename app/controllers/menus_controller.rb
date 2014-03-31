@@ -1,9 +1,9 @@
 class MenusController < ApplicationController
 
   def index
-    @menus = Menu.get_by_location(params[:zip]) & Menu.where("calories <= '#{params[:calories]}' AND category = '#{params[:category]}' ").sample(300).sort
-    # @random = @menus.sample
+    @menus = Menu.get_by_location(params[:zip]) & Menu.where("calories <= '#{params[:calories]}' AND category = '#{params[:category]}' ")
     @categories = Category.all
+    @favorite = Favorite.where(:user_id => current_user).pluck(:menu_id)
 
     if signed_in?
       @favorites = Favorite.where(:user_id => current_user.id).count
@@ -11,13 +11,6 @@ class MenusController < ApplicationController
       nil
     end
 
-    @favorite = Favorite.where(:user_id => current_user).pluck(:menu_id)
-
-    # @m = Menu.find_by(:id => params[:menu_id])
-   # @restaurants = @menus.group_by(&:restaurant).map{|k, v| v.first}
-   # @restaurants = @menus.each {:restaurant}.uniq
-   # @items = @menus.find_all{ |restaurant| @menus.collect.restaurant == restaurant }
-   # @restaurants = Menu.where("calories <= '#{params[:calories]}' AND category = '#{params[:category]}' ").group_by(&:restaurant).map{|k, v| v.first}
   end
 
   def show
@@ -35,20 +28,6 @@ class MenusController < ApplicationController
   end
 
   def update
-    @menu = Menu.find_by(:id => params[:id])
-    @menu.restaurant_id = params[:restaurant_id]
-    @menu.item = params[:item]
-    @menu.category = params[:category]
-    @menu.calories = params[:calories]
-    @menu.fat = params[:fat]
-    @menu.price = params[:price]
-    @menu.restaurant = params[:restaurant]
-    
-    if @menu.save
-      redirect_to menus_url
-    else
-      render 'new'
-    end
   end
 
   def destroy
@@ -57,15 +36,4 @@ class MenusController < ApplicationController
     redirect_to menus_url
   end
 
-  # def update_favorites
-  #   user = current_user
-  #   favorite = Favorite.where(:user_id => user.id).count
-  #   favorite.save
-  #     respond_to do |format|
-  #       format.js do
-  #         render :nothing => true
-  #       end
-  #     end
-  #   end
-  # end
 end

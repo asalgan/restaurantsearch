@@ -6,6 +6,9 @@ gem "spreadsheet", "0.9.0"
 
 gem 'roo'
 
+gem 'will_paginate', '3.0.4'
+gem 'bootstrap-will_paginate', '0.0.9'
+
 gem 'best_in_place', github: 'bernat/best_in_place'
 
 gem 'starter_generators'

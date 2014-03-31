@@ -7,9 +7,9 @@
 			<%= render 'foodpage_header' %> calories or less for you.<span class="editbutton"><%= link_to 'Edit', root_url %></span></p>
 		<% end %>
 	</div><!--end row-->
+
 	<div class="profile-button-nav">
 		<% if signed_in? %>
-
 			<p>
 				<button class="btn btn-primary btn-lg view-profile-button"><a href="<%= user_url(current_user) %>">View my favorite items (<span class="favorite-counter"><%="#{@favorites}"%></span>)</a></button>	
 			</p>
@@ -20,84 +20,19 @@
 		<% end %>
 	</div>
 
-		<p class="red-explanation"><em><span>* Seeing red?</span> Then something listed is over 1/3 of the <a href="http://www.fda.gov/Food/GuidanceRegulation/GuidanceDocumentsRegulatoryInformation/LabelingNutrition/ucm064928.htm", target="blank">FDA recommended daily intake</a>.</em></p>
-		<ul id="Grid" style="   ">
-			<% @menus.each do |food| %>
-				<li class="mix" id="<%= food.id %>">
-					<ol class="default">
-						<% if @favorite.include?(food.id) %>
-						<li><i class="fa fa-star favorite"></i></li>
-						<% else %>
-						<li><i class="fa fa-star regular"></i></li>
-						<% end %>
-						<li><span class="calorie-amount-per-item"><%= food.calories %></span></li>
-						<li><span class="food-item"><%= food.item %></span></li>
-						<li><span class="restaurant-name"><%= food.restaurant %></span></li>
-							<!-- i class="fa fa-angle-double-right"></i> -->
-					</ol>
-					<div class="under">
-						<div class="left">
-							<ol>
-								<% if @favorite.include?(food.id) %>
-								<li><i class="fa fa-star favorite"></i></li>
-								<% else %>
-								<li><i class="fa fa-star regular"></i></li>
-								<% end %>
-								<li><%= food.item %></li>
-								<li>
-									<% if food.calories >= 667 %>
-										<span class="over-dv">* <%= food.calories %> calories</span>
-									<% else %>
-										<span><%= food.calories %> calories</span>
-									<% end %>
-								</li>
-								<li>
-									<% if food.fat >= 21.7 %>
-										<span class="over-dv">* <%= food.fat %>g fat</span>
-									<% else %>
-										<span><%= food.fat %>g fat</span>
-									<% end %>
-								</li>
-							  <li>
-							  	<% if food.try(:carbs).to_i >= 100 %>
-							  		<span class="over-dv">* <%= food.try(:carbs).to_i %>g carbs</span>
-							  	<% else %>
-							  		<span><%= food.try(:carbs).to_i %>g carbs</span>
-							  	<% end %>
-							  </li>
-							</ol>
-						</div>
-						<div class="right">
-							<ol>
-								<li>
-									 0.67 miles away  <i class="fa fa-location-arrow right-links"></i>
-								</li>
-							</ol>
-						</div>
-					</div>
-				</li>
-			<% end %>
-		</ul>
+	<p class="red-explanation">
+		<em><span>* Seeing red?</span> Then something listed is over 1/3 of the <a href="http://www.fda.gov/Food/GuidanceRegulation/GuidanceDocumentsRegulatoryInformation/LabelingNutrition/ucm064928.htm", target="blank">FDA recommended daily intake</a>.</em>
+	</p>
+
+	<%= render 'food_item_grid' %>
 		
   </div><!--end container-->
+
   <div class="quote container">
 		<blockquote>"One cannot think well, love well, sleep well, if one has not dined well"</blockquote>
 		<h4>Virginia Woolf</h4>
 	</div>
-	<div class="footer">
-	<hr>
-	<ul>
-		<li>About</li>
-		<li>FAQ</li>
-		<li>Contact</li>
-	</ul>		
-</div>
-<div class="social-footer">
-	<ul>
-		<li><i class="fa fa-facebook"></i></li>
-		<li><i class="fa fa-twitter"></i></li>
-		<li><i class="fa fa-google-plus"></i></li>
-	</ul>
-</div>
+	
+	<%= render 'foodpage_footer' %>
 </div><!--end sortpage-->
 
