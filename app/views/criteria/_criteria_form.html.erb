@@ -7,27 +7,27 @@
 
   <div class="form-group">
     <h2 class="homelabel"><%= label_tag :calories, "Maximum calories" %></h2>
- 		<div class="slider">
-	  	<input type = "range" min="0" max="1500" step="5" name="calories" onchange="rangevalue.value=value"/>
-			<output id="rangevalue">750</output>
-		</div>
-			<h2 class="homelabel"><%= label_tag :category, "Category"%></h2>
-		<select class="selectpicker" name="category" multiple>
-			<% @categories.each do |category| %>
-				<option><%= category.name %></option>
-			<% end %>
+    <div class="slider">
+      <input type = "range" min="0" max="1500" step="5" name="calories" onchange="rangevalue.value=value"/>
+      <output id="rangevalue">750</output>
+    </div>
+      <h2 class="homelabel"><%= label_tag :category, "Category"%></h2>
+    <select class="selectpicker" name="category" multiple>
+      <% @categories.each do |category| %>
+        <option><%= category.name %></option>
+      <% end %>
     </select>
 
-    	<p>
-		 		<button type="submit" class="btn btn-primary btn-lg homepagebutton">Search</button>
-			</p>
+      <p>
+        <button type="submit" class="btn btn-primary btn-lg homepagebutton">Search</button>
+      </p>
 
-		<% if signed_in? %>
-			<p class="navlinkshome"><%= link_to 'My Profile', current_user %> | <%= link_to "Sign Out", signout_path, method: "delete" %></p>
-		<% else %>
-			<p class="navlinkshome"><%= link_to 'Sign In', signin_path %> | <%= link_to ' Register', '/users/new' %></p>
-		<% end %>
+    <% if signed_in? %>
+      <p class="navlinkshome"><%= link_to 'My Profile', current_user %> | <%= link_to "Sign Out", signout_path, method: "delete" %></p>
+    <% else %>
+      <p class="navlinkshome"><%= link_to 'Sign In', signin_path %> | <%= link_to ' Register', '/users/new' %></p>
+    <% end %>
 
-		<br>
+    <br>
   </div>
 </form>

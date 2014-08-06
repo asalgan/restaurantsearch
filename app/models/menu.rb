@@ -35,20 +35,6 @@ class Menu < ActiveRecord::Base
   end
   return menus.flatten.compact
 
-  
-
-  # hash = turn_url_into_hash("http://maps.googleapis.com/maps/api/geocode/json?address=#{self.finish}&sensor=false")
-
-
-  # # finish_lat = hash["results"].first["geometry"]["location"]["lat"]
-  # # finish_long = hash["results"].first["geometry"]["location"]["lng"]
-
-  # # finish_cords = [finish_lat, finish_long]
-
-  # # directions_hash = turn_url_into_hash("http://maps.googleapis.com/maps/api/directions/json?origin=#{start_cords.first},#{start_cords.last}&destination=#{finish_cords.first},#{finish_cords.last}&mode=transit&departure_time=#{Time.now.to_i}&sensor=false")
-
  end
-
-
   
 end
