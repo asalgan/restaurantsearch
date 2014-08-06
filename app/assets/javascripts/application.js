@@ -37,7 +37,7 @@ $(document).ready(function() {
     });
   });
 
-
+  $('#Grid').mixitup();
   /* Activating Best In Place */
   $(".best_in_place").best_in_place();
 
