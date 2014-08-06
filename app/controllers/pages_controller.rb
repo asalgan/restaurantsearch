@@ -4,7 +4,7 @@ class PagesController < ApplicationController
     
   end
 
-	def welcome
+  def welcome
      UserMailer.welcome_email(params[:email]).deliver
      redirect_to root_path
    end

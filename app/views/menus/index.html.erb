@@ -1,38 +1,38 @@
 <div id="sortpage">
   <div class="container">
-	<div class="row">
-		<% if params[:zip].present? %>
-			<%= render 'foodpage_header' %> calories or less near <span id="foodpagezip"><%= params[:zip].chomp(", United States")  %></span> for you.<span class="editbutton"><%= link_to 'Edit', root_url %></span></p>
-		<% else %>
-			<%= render 'foodpage_header' %> calories or less for you.<span class="editbutton"><%= link_to 'Edit', root_url %></span></p>
-		<% end %>
-	</div><!--end row-->
+  <div class="row">
+    <% if params[:zip].present? %>
+      <%= render 'foodpage_header' %> calories or less near <span id="foodpagezip"><%= params[:zip].chomp(", United States")  %></span> for you.<span class="editbutton"><%= link_to 'Edit', root_url %></span></p>
+    <% else %>
+      <%= render 'foodpage_header' %> calories or less for you.<span class="editbutton"><%= link_to 'Edit', root_url %></span></p>
+    <% end %>
+  </div><!--end row-->
 
-	<div class="profile-button-nav">
-		<% if signed_in? %>
-			<p>
-				<button class="btn btn-primary btn-lg view-profile-button"><a href="<%= user_url(current_user) %>">View my favorite items (<span class="favorite-counter"><%="#{@favorites}"%></span>)</a></button>	
-			</p>
-		<% else %>
-			<p>
-				<button class="btn btn-primary btn-lg create-profile-button"><a href="<%= signin_url %>">Sign in to save favorites</a></button>	
-			</p>
-		<% end %>
-	</div>
+  <div class="profile-button-nav">
+    <% if signed_in? %>
+      <p>
+        <button class="btn btn-primary btn-lg view-profile-button"><a href="<%= user_url(current_user) %>">View my favorite items (<span class="favorite-counter"><%="#{@favorites}"%></span>)</a></button> 
+      </p>
+    <% else %>
+      <p>
+        <button class="btn btn-primary btn-lg create-profile-button"><a href="<%= signin_url %>">Sign in to save favorites</a></button> 
+      </p>
+    <% end %>
+  </div>
 
-	<p class="red-explanation">
-		<em><span>* Seeing red?</span> Then something listed is over 1/3 of the <a href="http://www.fda.gov/Food/GuidanceRegulation/GuidanceDocumentsRegulatoryInformation/LabelingNutrition/ucm064928.htm", target="blank">FDA recommended daily intake</a>.</em>
-	</p>
+  <p class="red-explanation">
+    <em><span>* Seeing red?</span> Then something listed is over 1/3 of the <a href="http://www.fda.gov/Food/GuidanceRegulation/GuidanceDocumentsRegulatoryInformation/LabelingNutrition/ucm064928.htm", target="blank">FDA recommended daily intake</a>.</em>
+  </p>
 
-	<%= render 'food_item_grid' %>
-		
+  <%= render 'food_item_grid' %>
+    
   </div><!--end container-->
 
   <div class="quote container">
-		<blockquote>"One cannot think well, love well, sleep well, if one has not dined well"</blockquote>
-		<h4>Virginia Woolf</h4>
-	</div>
-	
-	<%= render 'foodpage_footer' %>
+    <blockquote>"One cannot think well, love well, sleep well, if one has not dined well"</blockquote>
+    <h4>Virginia Woolf</h4>
+  </div>
+  
+  <%= render 'foodpage_footer' %>
 </div><!--end sortpage-->
 

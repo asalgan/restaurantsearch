@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
 
-	 def add_item_to_user
+   def add_item_to_user
 
     user = current_user
     favorite = Favorite.where(:user_id => user.id).pluck(:menu_id)
