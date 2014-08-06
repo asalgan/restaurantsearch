@@ -37,14 +37,6 @@ $(document).ready(function() {
     });
   });
 
-  // $('.showonly').click(function(event) {
-    // event.preventDefault();
-    // $(this).toggleClass('active');
-    // $('li.mix').not('.favorite').hide();
-  // });
-    
-
-  $('#Grid').mixitup();
 
   /* Activating Best In Place */
   $(".best_in_place").best_in_place();
